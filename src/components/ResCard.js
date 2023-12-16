@@ -1,4 +1,5 @@
 import { IMG_CDN_URL } from "../utils/constants";
+
 const ResCard = (props) => {
     const { resData } = props;
 

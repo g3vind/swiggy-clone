@@ -90,3 +90,9 @@
   margin-top: 10px;
   font-style: italic;
 }
+/* FILTER BUTTON */
+.filter-btn {
+  margin: 10px;
+  height: 30px;
+  width: full;
+}
