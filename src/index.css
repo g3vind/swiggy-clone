@@ -70,7 +70,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+  margin: -10px;
 }
 /* RES CARD */
 .res-card {
@@ -121,6 +121,15 @@
   width: 200px;
   background-color: #f0f0f0;
   margin: 20px;
+}
+.banner-shimmer{
+  margin-top: -20px;
+  border-radius: 50%;
+  height: 150px;
+  width: 120px;
+  background-color: gray;
+  margin: 34px;
+  
 }
 .login{
   height: 2.2rem;

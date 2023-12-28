@@ -20,8 +20,6 @@ const ResCard = ({ cloudinaryImageId, name, avgRating, cuisines, sla }) => {
       <small className="mt-2 font-serif text-center font-extralight">
         {cuisines.slice(0, 3).join(", ")}
       </small>
-
-      <h4></h4>
     </div>
   );
 };

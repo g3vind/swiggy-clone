@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { API_CDN } from "../utils/constants.js";
+import { API_CDN, IMG_CDN_URL } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer.js";
 import Banner from "./Banner.js";
+import BannerShimmer from "./BannerShimmer.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [bannerData, setBannerData] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -24,7 +26,16 @@ const Body = () => {
           : json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
               ?.restaurants
       );
-      console.log(json.data.cards[0]);
+      setBannerData(
+        json?.data?.cards[0]?.card?.card?.imageGridCards?.info.map(
+          (bannerInfo) => ({
+            id: bannerInfo.id,
+            imageId: bannerInfo.imageId,
+            action: bannerInfo.action,
+          })
+        ) || []
+      );
+      console.log(json.data.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -61,7 +72,8 @@ const Body = () => {
         />
       </div>
       <span className="text-xl font-bold ml-16">What's in your mind?</span>
-      <Banner />
+      {/* ------------------BANNER COMPONENT----------------------------- */}
+      <Banner banners={bannerData} />
       <span className="text-xl font-bold ml-16">Top Restaurants For You</span>
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
