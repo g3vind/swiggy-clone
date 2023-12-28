@@ -1,7 +1,9 @@
+import React, { useState } from "react";
 import { LOGO_URL } from "../utils/constants.js";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [loginButton, setLoginButton] = useState(true);
   return (
     <div className="header">
       {/* HEADER LOGO  */}
@@ -24,6 +26,16 @@ const Header = () => {
           </Link>
           <Link to="/cart">
             <li>Cart</li>
+          </Link>
+          <Link>
+            <button
+              className="login"
+              onClick={() => {
+                setLoginButton(!loginButton);
+              }}
+            >
+              {loginButton ? "Login" : "Logout"}
+            </button>
           </Link>
         </ul>
       </div>

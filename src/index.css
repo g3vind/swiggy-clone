@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +39,7 @@
   padding: 20px;
   font-weight: bold;
   cursor: pointer;
+  list-style: none;
 }
 /* SEARCH */
 .search {
@@ -44,17 +49,21 @@
   margin-top: 13px;
 }
 .search input {
-  height: 28px;
-  width: 40vw;
+  height: 35px;
+  width: 50vw;
+  border: 2px solid black;
   border-radius: 5px;
+  text-align: center;
 }
 #search-btn {
   margin-left: 10px;
-  height: 30px;
-  width: 60px;
+  height: 2remx;
+  width:4rem;
+  padding: 3px;
   border-radius: 5px;
-  /* background-color: brown; */
-  /* color: white; */
+  background-color: gray;
+  color: white;
+  border: none;
 }
 /* RES CONTAINER */
 .res-container {
@@ -110,4 +119,15 @@
   width: 200px;
   background-color: #f0f0f0;
   margin: 20px;
+}
+.login{
+  height: 2.2rem;
+  width: 4rem;
+  position: relative;
+  top: 14px;
+  left: 20px;
+  color: black;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 8px;
 }
