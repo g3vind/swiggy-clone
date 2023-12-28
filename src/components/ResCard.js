@@ -2,17 +2,24 @@ import { IMG_CDN_URL } from "../utils/constants";
 
 const ResCard = ({ cloudinaryImageId, name, avgRating, cuisines, sla }) => {
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="res-card flex flex-col">
       <img
-        className="res-logo"
+        className="w-300"
         alt="res-logo"
         src={IMG_CDN_URL + cloudinaryImageId}
       />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
+      <div>
+        <h3 className="font-extrabold">{name}</h3>
+      </div>
+      <h4>
+        ⭐{avgRating}stars • <span>{sla.deliveryTime} minutes</span>
+      </h4>
+      <small className="mt-2 font-serif text-center font-extralight">
+        {cuisines.slice(0, 3).join(", ")}
+      </small>
+
       {/* <h4>₹{costForTwo / 100} FOR TWO</h4> */}
-      <h4>🚚{sla.deliveryTime} minutes</h4>
+      <h4></h4>
     </div>
   );
 };

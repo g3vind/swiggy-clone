@@ -10,6 +10,9 @@ const Header = () => {
       <div className="logo-container">
         <Link to="/">
           <img src={LOGO_URL} alt="LOGO"></img>
+          {/* <span className="relative -top-6 -right-21 font-mono font-semibold shadow-md text-red-900">
+            Food Express
+          </span> */}
         </Link>
       </div>
       {/* NAV ITEMS */}

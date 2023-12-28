@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer.js";
+import Banner from "./Banner.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -23,6 +24,7 @@ const Body = () => {
           : json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
               ?.restaurants
       );
+      console.log(json.data.cards[0]);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -54,10 +56,11 @@ const Body = () => {
             }
           }}
           type="text"
-          placeholder="Search for dishes or restaurants"
+          placeholder="Search for restaurants, dishes and food"
           className="h-4 w-40"
         />
       </div>
+      <Banner />
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
           listOfRestaurants.map((restaurant) => (
