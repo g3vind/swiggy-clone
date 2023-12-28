@@ -43,8 +43,15 @@ const Body = () => {
           onChange={(e) => {
             const text = e.target.value;
             setSearchText(text);
-            const searchedData = handleSearch(text);
-            setListOfRestaurants(searchedData);
+
+            if (text.trim() === "") {
+              // If search text is empty, revert to the original data
+              fetchData();
+            } else {
+              // Otherwise, perform the search
+              const searchedData = handleSearch(text);
+              setListOfRestaurants(searchedData);
+            }
           }}
           type="text"
           placeholder="Search for dishes or restaurants"
