@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { resList } from "../utils/mockData.js";
 import ResCard from "./ResCard";
+import Shimmer from "./Shimmer.js";
 
 const Body = () => {
   // state to store rest data
@@ -38,21 +39,21 @@ const Body = () => {
   };
 
   // function to filter top-rated restaurants
-  const filterTopRated = () => {
-    const filteredList = listOfRestaurants?.filter(
-      (res) => res.data.avgRating > 4
-    );
-    setFilteredRestaurant(filteredList);
-  };
+  // const filterTopRated = () => {
+  //   const filteredList = listOfRestaurants?.filter(
+  //     (res) => res.info.availability.avgRating > 4
+  //   );
+  //   setFilteredRestaurant(filteredList);
+  // };
 
   return (
     <div className="body">
       {/* TOP RATED BUTTON */}
-      <div className="filter-container">
+      {/* <div className="filter-container">
         <button className="filter-btn" onClick={filterTopRated}>
           Top Rated Restaurants
         </button>
-      </div>
+      </div> */}
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
           (filteredRestaurant?.length > 0
@@ -62,7 +63,7 @@ const Body = () => {
             <ResCard key={restaurant.info.id} {...restaurant.info} />
           ))
         ) : (
-          <p>Loading...</p>
+          <Shimmer />
         )}
       </div>
       <div>
