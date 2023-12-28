@@ -6,6 +6,8 @@
 }
 
 .header {
+  height: 5rem;
+  width: full;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -95,4 +97,15 @@
   margin: 10px;
   height: 30px;
   width: full;
+}
+/* SHIMMER UI */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  height: 300px;
+  width: 200px;
+  background-color: #f0f0f0;
+  margin: 20px;
 }

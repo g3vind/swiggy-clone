@@ -1,36 +1,62 @@
-import { useState } from "react";
-import { resList } from "../utils/mockData.js"
-import ResCard from "./ResCard"
+import { useEffect, useState } from "react";
+import { resList } from "../utils/mockData.js";
+import ResCard from "./ResCard";
 
 const Body = () => {
-    const [restaurants, setRestaurants] = useState(resList);
-    const [topRated, setTopRated] = useState([]);
+  // state to store rest data
+  const [listOfRestaurants, setListOfRestraunt] = useState(resList);
 
-    // function to filter top rated restaurants
-    const filterTopRated = () => {
-        const filteredList = restaurants.filter((res) => res.data.avgRating > 4);
-        setTopRated(filteredList);
-    };
+  // state to store filtered data
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-    return (
-        <div className="body">
-            <div className="filter-container">
-                <button className="filter-btn" onClick={filterTopRated}>
-                    Top Rated Restaurants
-                </button>
-            </div>
-            <div className="res-container">
-                {topRated.length > 0 ? (
-                    topRated.map((restaurant) => (
-                        <ResCard key={restaurant.data.id} resData={restaurant} />
-                    ))
-                ) : (
-                    restaurants.map((restaurant) => (
-                        <ResCard key={restaurant.data.id} resData={restaurant} />
-                    ))
-                )}
-            </div>
-        </div>
+  // use effect hook for calling func on each render
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // fetch data function
+  const fetchData = async () => {
+    try {
+      const data = await fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      );
+      const json = await data.json();
+      //   setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  // function to filter top-rated restaurants
+  const filterTopRated = () => {
+    const filteredList = listOfRestaurants?.filter(
+      (res) => res.data.avgRating > 4
     );
+    setFilteredRestaurant(filteredList);
+  };
+
+  return (
+    <div className="body">
+      {/* TOP RATED BUTTON */}
+      <div className="filter-container">
+        <button className="filter-btn" onClick={filterTopRated}>
+          Top Rated Restaurants
+        </button>
+      </div>
+      <div className="res-container">
+        {listOfRestaurants?.length > 0 ? (
+          (filteredRestaurant?.length > 0
+            ? filteredRestaurant
+            : listOfRestaurants
+          ).map((restaurant) => (
+            <ResCard key={restaurant.data.id} resData={restaurant} />
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    </div>
+  );
 };
+
 export default Body;
