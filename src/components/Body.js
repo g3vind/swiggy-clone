@@ -1,30 +1,21 @@
 import { useEffect, useState } from "react";
-import { resList } from "../utils/mockData.js";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer.js";
-import Banner from "./Banner.js";
 
 const Body = () => {
-  // state to store rest data
-  const [listOfRestaurants, setListOfRestraunt] = useState([]);
-  // state to store searched rest data
-  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  // state to store the entered text in search bar
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  // use effect hook for calling func on each render
   useEffect(() => {
     fetchData();
   }, []);
 
-  // fetch data function
   const fetchData = async () => {
     try {
       const data = await fetch(API_CDN);
       const json = await data.json();
-      setListOfRestraunt(
-        // optional chaining
+      setListOfRestaurants(
         !json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
           ? json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -36,40 +27,33 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
+  // function to handle search text
+  const handleSearch = (text) => {
+    const searchedData = listOfRestaurants.filter((res) =>
+      res.info.name.toLowerCase().includes(text.toLowerCase())
+    );
+    return searchedData;
+  };
 
   return (
     <div className="body">
-      {/* ----------------------SEARCH INPUT-------------------------------*/}
       <div className="search">
         <input
           value={searchText}
           onChange={(e) => {
-            setSearchText(e.target.value);
+            const text = e.target.value;
+            setSearchText(text);
+            const searchedData = handleSearch(text);
+            setListOfRestaurants(searchedData);
           }}
           type="text"
-          placeholder="search for dishes or restaurants"
+          placeholder="Search for dishes or restaurants"
           className="h-4 w-40"
         />
-        {/* ---------------------SEARCH BUTTON--------------------------------*/}
-        <button
-          id="search-btn"
-          onClick={() => {
-            const searchedData = listOfRestaurants.filter((res) =>
-              res.info.name.toLowerCase().includes(searchText.toLowerCase())
-            );
-            setFilteredRestaurant(searchedData);
-          }}
-        >
-          Search
-        </button>
       </div>
-      {/*-------------------- RESTAURANT LIST----------------------- */}
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
-          (filteredRestaurant?.length > 0
-            ? filteredRestaurant
-            : listOfRestaurants
-          ).map((restaurant) => (
+          listOfRestaurants.map((restaurant) => (
             <ResCard key={restaurant.info.id} {...restaurant.info} />
           ))
         ) : (
