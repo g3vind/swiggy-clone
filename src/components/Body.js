@@ -4,7 +4,7 @@ import ResCard from "./ResCard";
 
 const Body = () => {
   // state to store rest data
-  const [listOfRestaurants, setListOfRestraunt] = useState(resList);
+  const [listOfRestaurants, setListOfRestraunt] = useState([]);
 
   // state to store filtered data
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -21,7 +21,17 @@ const Body = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      //   setListOfRestraunt(json?.data?.cards[2]?.data?.data?.cards);
+      setListOfRestraunt(
+        !json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+          ? json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+          : json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants
+      );
+      console.log(
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      );
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -49,11 +59,16 @@ const Body = () => {
             ? filteredRestaurant
             : listOfRestaurants
           ).map((restaurant) => (
-            <ResCard key={restaurant.data.id} resData={restaurant} />
+            <ResCard key={restaurant.info.id} {...restaurant.info} />
           ))
         ) : (
           <p>Loading...</p>
         )}
+      </div>
+      <div>
+        <ul>
+          <li></li>
+        </ul>
       </div>
     </div>
   );
