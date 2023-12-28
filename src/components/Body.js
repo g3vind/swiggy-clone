@@ -57,10 +57,12 @@ const Body = () => {
           }}
           type="text"
           placeholder="Search for restaurants, dishes and food"
-          className="h-4 w-40"
+          className="h-4 w-40 mt-2"
         />
       </div>
+      <span className="text-xl font-bold ml-16">What's in your mind?</span>
       <Banner />
+      <span className="text-xl font-bold ml-16">Top Restaurants For You</span>
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
           listOfRestaurants.map((restaurant) => (

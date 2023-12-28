@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Footer } from "./components/Footer";
 
 const AppLayout = () => {
   return (
@@ -17,6 +18,7 @@ const AppLayout = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

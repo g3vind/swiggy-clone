@@ -5,7 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  font-family: " Proxima Nova, Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
@@ -75,20 +75,18 @@
 /* RES CARD */
 .res-card {
   height: 280px;
-  width: 200px;
-  margin: 3px;
-  background-color: #f0f0f0;
-  margin: 10px;
+  width: 250px;
+  margin: 20px;
   /* border: 2px solid gray; */
   border-radius: 13px;
 }
 .res-card:hover {
-  border: 1px solid black;
+  border: 3px solid white;
   cursor: pointer;
 }
 .res-card img {
   height: 140px;
-  width: 300px;
+  width: 325px;
   border-radius: 12px;
 }
 .res-card h3 {
@@ -142,4 +140,7 @@
   width: 200px;
   position: relative;
   margin-left: 35px;
+}
+.medtext{
+  font-size: 13;
 }
