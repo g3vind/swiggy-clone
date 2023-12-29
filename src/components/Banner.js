@@ -8,12 +8,12 @@ const Banner = ({ banners }) => {
   const limitedBanners = banners.slice(0, 6);
 
   return (
-    <div className="flex flex-row mt-10 items-center justify-center">
+    <div className="flex flex-row mt-5 items-center justify-center">
       {limitedBanners.length > 0 ? (
         limitedBanners.map((banner) => (
           <div className="banner-card cursor-pointer" key={banner.id}>
             <h2>{banner.header}</h2>
-            <p>
+            <div className="h-fulll">
               <img
                 className="h-50 w-40"
                 src={IMG_CDN_URL + banner.imageId}
@@ -22,7 +22,7 @@ const Banner = ({ banners }) => {
               <span className=" relative ml-12 font-bold text-center">
                 {banner.action.text}
               </span>
-            </p>
+            </div>
           </div>
         ))
       ) : (
