@@ -159,3 +159,7 @@ background-color: #f0f0f0;
 .medtext{
   font-size: 13;
 }
+.spinner{
+  margin-left: 48vw;
+  margin-top: 20px;
+}
