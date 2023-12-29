@@ -124,14 +124,13 @@
   border-radius: 13px;
 }
 .banner-shimmer{
-  margin-top: -20px;
-  border-radius: 50%;
-  height: 150px;
-  width: 120px;
+  margin-top: -30px;
+  height: 200px;
+  width: 100vw;
 background-color: #f0f0f0;
-  margin: 34px;
-  
+  margin: 20px;
 }
+
 .login{
   height: 2.2rem;
   width: 4rem;

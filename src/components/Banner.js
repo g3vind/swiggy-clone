@@ -12,6 +12,7 @@ const Banner = ({ banners }) => {
       {limitedBanners.length > 0 ? (
         limitedBanners.map((banner) => (
           <div className="banner-card cursor-pointer" key={banner.id}>
+            <h2>{banner.header}</h2>
             <p>
               <img
                 className="h-50 w-40"

@@ -11,11 +11,11 @@ import { Error } from "./pages/Error";
 
 const AppLayout = () => {
   return (
-    <div className="app">
+    <>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 

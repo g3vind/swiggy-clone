@@ -8,6 +8,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [bannerData, setBannerData] = useState([]);
+  const [bannerTitle, setBannerTitle] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -34,6 +35,7 @@ const Body = () => {
           })
         ) || []
       );
+      setBannerTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       console.log(json.data.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -70,7 +72,8 @@ const Body = () => {
           className="h-4 w-40 mt-2"
         />
       </div>
-      <span className="text-xl font-bold ml-16">What's in your mind?</span>
+      {/* BANNER TITLE */}
+      <span className="text-xl font-bold ml-16">{bannerTitle}</span>
       {/* ------------------BANNER COMPONENT----------------------------- */}
       <Banner banners={bannerData} />
       <span className="text-xl font-bold ml-16">Top Restaurants For You</span>
