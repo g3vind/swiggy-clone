@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
+import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer.js";
 import Banner from "./Banner.js";
 
@@ -84,7 +85,12 @@ const Body = () => {
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
           listOfRestaurants.map((restaurant) => (
-            <ResCard key={restaurant.info.id} {...restaurant.info} />
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              <ResCard {...restaurant.info} />
+            </Link>
           ))
         ) : (
           <Shimmer />

@@ -88,6 +88,7 @@
   height: 140px;
   width: 325px;
   border-radius: 12px;
+  /* overflow: hidden; */
 }
 .res-card h3 {
   margin-top: 20px;
@@ -106,11 +107,7 @@
   font-style: italic;
 }
 /* FILTER BUTTON */
-.filter-btn {
-  margin: 10px;
-  height: 30px;
-  width: full;
-}
+
 /* SHIMMER UI */
 .shimmer-container {
   display: flex;
@@ -163,3 +160,43 @@ background-color: #f0f0f0;
   margin-left: 48vw;
   margin-top: 20px;
 }
+/* RES MENU */
+.menu-container{
+  display: flex;
+  flex-direction: row;
+}
+.left img{
+  height: 210px;
+  width: 270px;
+  border-radius: 12px;
+  margin: 30px;
+  margin-left: 20vw;
+}
+.left img:hover{
+  border: 2px solid white;
+}
+.right{
+  justify-content: flex-end;
+  margin-left: 22vw;
+  margin-top: 10px;
+}
+.rating{
+  background-color: aliceblue;
+  border-radius: 20%;
+  padding: 10px;
+}
+.discount{
+  display: inline-block;
+  font-size: larger;
+  width: auto;
+  /* border: 2px solid black; */
+  margin: 20px;
+  margin-left: -6px;
+  line-height: 20px;
+  background-color:aquamarine ;
+  margin-top: 20px;
+}
+
+
+
+

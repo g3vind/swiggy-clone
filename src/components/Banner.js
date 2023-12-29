@@ -13,9 +13,9 @@ const Banner = ({ banners }) => {
         limitedBanners.map((banner) => (
           <div className="banner-card cursor-pointer" key={banner.id}>
             <h2>{banner.header}</h2>
-            <div className="h-fulll">
+            <div className="h-full overflow-hidden object-cover">
               <img
-                className="h-50 w-40"
+                className="h-55 w-44"
                 src={IMG_CDN_URL + banner.imageId}
                 alt={banner.action.text}
               />

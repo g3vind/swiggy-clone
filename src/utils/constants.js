@@ -8,4 +8,4 @@ export const BANNER_API_CDN =
   "https://www.swiggy.com/mapi/homepage/getCards?lat=12.962163&lng=79.1506201";
 
 export const MENU_API =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.962163&lng=79.1506201&restaurantId=72849";
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.962163&lng=79.1506201&restaurantId=72849&catalog_qa=undefined";
