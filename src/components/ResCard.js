@@ -14,7 +14,7 @@ const ResCard = ({ cloudinaryImageId, name, avgRating, cuisines, sla }) => {
 
       <h4>
         <span className="medtext">⭐{avgRating}stars</span> •
-        <span className="font-semibold ">{sla.deliveryTime} minutes</span>
+        <span className="font-semibold ">{sla?.deliveryTime} minutes</span>
       </h4>
 
       <small className="mt-2 font-serif text-center font-extralight">

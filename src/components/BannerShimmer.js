@@ -1,5 +1,3 @@
-import React from "react";
-
 function BannerShimmer() {
   return (
     <div className="shimmer-container">

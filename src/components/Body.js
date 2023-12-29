@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { API_CDN, IMG_CDN_URL } from "../utils/constants.js";
+import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import Shimmer from "./Shimmer.js";
 import Banner from "./Banner.js";
-import BannerShimmer from "./BannerShimmer.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -75,6 +74,7 @@ const Body = () => {
       {/* ------------------BANNER COMPONENT----------------------------- */}
       <Banner banners={bannerData} />
       <span className="text-xl font-bold ml-16">Top Restaurants For You</span>
+      {/*----------------------- RES CARDS ----------------------------------*/}
       <div className="res-container">
         {listOfRestaurants?.length > 0 ? (
           listOfRestaurants.map((restaurant) => (
