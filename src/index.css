@@ -130,6 +130,12 @@
 background-color: #f0f0f0;
   margin: 20px;
 }
+.res-text{
+  height: 10px;
+  width: 20vw;
+  background-color: gray;
+
+}
 
 .login{
   height: 2.2rem;
