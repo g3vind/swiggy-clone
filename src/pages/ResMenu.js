@@ -58,9 +58,11 @@ const ResMenu = () => {
         </div>
         <div className="right">
           <h1 className="text-2xl font-bold mt-5 mb-2">{name}</h1>
+          <hr></hr>
           <div>
             <h2>{cuisines?.join(", ")}</h2>
           </div>
+          <hr></hr>
           <div>
             <h2>
               <p className="font-medium">
@@ -68,6 +70,7 @@ const ResMenu = () => {
               </p>
             </h2>
           </div>
+          <hr></hr>
           <div className="discount">
             <p className="flex items-center">
               <span className="mr-2">
@@ -92,6 +95,7 @@ const ResMenu = () => {
                   </div>
                   <div className="dish-details">
                     <p className="dish-name">{item?.card?.info?.name}</p>
+
                     <p className="dish-price">
                       ₹
                       {item?.card?.info?.price / 100 ||
