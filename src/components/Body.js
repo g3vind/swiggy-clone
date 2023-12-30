@@ -39,7 +39,7 @@ const Body = () => {
       );
       setBannerTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setBodyTitle(json?.data?.cards[2]?.card?.card?.title);
-      console.log(json.data.cards);
+      // console.log(json.data.cards);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

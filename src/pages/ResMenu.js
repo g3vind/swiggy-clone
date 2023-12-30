@@ -20,7 +20,7 @@ const ResMenu = () => {
     const response = await fetch(MENU_API + resId);
     const json = await response.json();
     setResInfo(json.data);
-    // console.log(json.data);
+    console.log(json);
   };
   if (resInfo === null) {
     return <Shimmer />;
@@ -39,8 +39,14 @@ const ResMenu = () => {
     aggregatedDiscountInfoV2,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
+  // // const { itemCards } =
+  // //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+  // //     ?.card || {};
+  // const { itemCards } = resInfo?.cards[2]?.card?.card?.info;
+  // console.log(itemCards);
+
   const { itemCards } =
-    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
 
   return (
@@ -61,9 +67,9 @@ const ResMenu = () => {
           </div>
           <div>
             <h2>
-              <h3 className="font-medium">
+              <p className="font-medium">
                 Address:{locality},{areaName},{city}
-              </h3>
+              </p>
             </h2>
           </div>
           <div className="discount">
@@ -77,6 +83,16 @@ const ResMenu = () => {
           <div className="discount">
             <p>{costForTwoMessage}</p>
           </div>
+          <ul>
+            {itemCards &&
+              itemCards.map((item) => (
+                <li key={item?.card?.info?.id}>
+                  {item?.card?.info?.name} - Rs.
+                  {item?.card?.info?.price / 100 ||
+                    item?.card?.info?.defaultPrice / 100}
+                </li>
+              ))}
+          </ul>
         </div>
       </div>
     </>
