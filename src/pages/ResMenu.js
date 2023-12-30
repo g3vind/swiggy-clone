@@ -20,7 +20,7 @@ const ResMenu = () => {
     const response = await fetch(MENU_API + resId);
     const json = await response.json();
     setResInfo(json.data);
-    console.log(json);
+    // console.log(json);
   };
   if (resInfo === null) {
     return <Shimmer />;
@@ -39,15 +39,11 @@ const ResMenu = () => {
     aggregatedDiscountInfoV2,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
-  // // const { itemCards } =
-  // //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-  // //     ?.card || {};
-  // const { itemCards } = resInfo?.cards[2]?.card?.card?.info;
-  // console.log(itemCards);
-
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
+
+  console.log(itemCards);
 
   return (
     <>
@@ -61,14 +57,14 @@ const ResMenu = () => {
           </p>
         </div>
         <div className="right">
-          <h1 className="text-2xl font-bold mt-5">{name}</h1>
+          <h1 className="text-2xl font-bold mt-5 mb-2">{name}</h1>
           <div>
             <h2>{cuisines?.join(", ")}</h2>
           </div>
           <div>
             <h2>
               <p className="font-medium">
-                Address:{locality},{areaName},{city}
+                Address: {locality},{areaName},{city}
               </p>
             </h2>
           </div>
@@ -83,15 +79,32 @@ const ResMenu = () => {
           <div className="discount">
             <p>{costForTwoMessage}</p>
           </div>
-          <ul>
-            {itemCards &&
+          <h3 className="text-xl font-semibold mb-2">Available Dishes</h3>
+          <ul className="dishes-list">
+            {itemCards && itemCards.length > 0 ? (
               itemCards.map((item) => (
-                <li key={item?.card?.info?.id}>
-                  {item?.card?.info?.name} - Rs.
-                  {item?.card?.info?.price / 100 ||
-                    item?.card?.info?.defaultPrice / 100}
+                <li key={item?.card?.info?.id} className="dish-card">
+                  <div className="dish-image-container">
+                    <img
+                      src={IMG_CDN_URL + item?.card?.info?.imageId}
+                      alt={item?.card?.info?.name}
+                    />
+                  </div>
+                  <div className="dish-details">
+                    <p className="dish-name">{item?.card?.info?.name}</p>
+                    <p className="dish-price">
+                      ₹
+                      {item?.card?.info?.price / 100 ||
+                        item?.card?.info?.defaultPrice / 100}
+                    </p>
+                  </div>
                 </li>
-              ))}
+              ))
+            ) : (
+              <p className="text-2xl border-2 bg-slate-300 no-dishes">
+                No dishes at the moment. 😢
+              </p>
+            )}
           </ul>
         </div>
       </div>
