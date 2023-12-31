@@ -102,7 +102,7 @@ const Body = () => {
       {/*----------------------- RES CARDS ----------------------------------*/}
       <div className="flex flex-wrap flex-col ml-28 justify-center">
         <div></div>
-        <div className="flex flex-wrap">
+        <div className="flex">
           {/* row di */}
           <div className="flex-row">
             <div className="flex overflow-x-auto">
