@@ -1,5 +1,5 @@
 import React from "react";
-import { Gamepad2 } from "lucide-react";
+import { Gamepad2, PowerOff } from "lucide-react";
 import offlineImage from "../images/Offline.png";
 
 export default function Offline() {
@@ -13,11 +13,15 @@ export default function Offline() {
           <p className="mt-4 text-2xl text-gray-500 text-center">
             You're offline. Check your connection.
           </p>
-          <img
+          <div className="grid place-items-center">
+            {" "}
+            <PowerOff size={40} className="" />
+          </div>
+          {/* <img
             src={offlineImage}
             alt="offline image"
             className="h-40 w-40 relative left-28 mt-4 justify-center items-center rounded-md object-cover"
-          />
+          /> */}
           <div className="mt-6 flex items-center justify-center">
             <button
               type="button"

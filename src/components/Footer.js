@@ -2,7 +2,7 @@ import React from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 
-export function Footer() {
+export default function Footer() {
   return (
     <section className="relative overflow-hidden bg-white py-2 shadow-lg">
       <div className="container relative z-10 mx-auto px-4">
