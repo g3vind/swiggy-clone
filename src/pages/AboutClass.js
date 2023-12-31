@@ -5,7 +5,7 @@ const AboutClass = () => {
   return (
     <>
       <h1>About Me</h1>
-      <User name={"Govind Singh (Function)"} />
+
       <hr></hr>
       <UserClass name={"GOVIND KUMAR (CLASS)"} />
     </>

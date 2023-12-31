@@ -26,7 +26,7 @@ const Banner = ({ banners }) => {
           </div>
         ))
       ) : (
-        <BannerShimmer /> // Render BannerShimmer when there are no banners
+        <BannerShimmer />
       )}
     </div>
   );

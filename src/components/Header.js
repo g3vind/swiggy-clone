@@ -62,12 +62,14 @@ const Header = () => {
               {loginButton ? "Login" : "Logout"}
             </button>
           </Link>
-          <li
-            id="statusIndicator"
-            className={status ? "text-green-500" : "text-red-500"}
-          >
-            {status ? "🟢 Online" : "🔴 Offline"}
-          </li>
+          <div className="ml-8">
+            <li
+              id="blinkingItem"
+              className={status ? "text-green-500" : "text-red-500"}
+            >
+              {status ? "🟢" : "🔴 Offline"}
+            </li>
+          </div>
         </ul>
       </div>
     </div>

@@ -20,7 +20,6 @@ const ResMenu = () => {
     const response = await fetch(MENU_API + resId);
     const json = await response.json();
     setResInfo(json.data);
-    // console.log(json);
   };
   if (resInfo === null) {
     return <Shimmer />;
@@ -66,7 +65,11 @@ const ResMenu = () => {
           <div>
             <h2>
               <p className="font-medium">
-                Address: {locality},{areaName},{city}
+                Address: {locality},{areaName},
+              </p>
+              <p>
+                City:
+                <span className="font-bold">{city}</span>
               </p>
             </h2>
           </div>

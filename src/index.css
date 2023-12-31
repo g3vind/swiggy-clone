@@ -153,6 +153,9 @@ background-color: #f0f0f0;
   position: relative;
   margin-left: 35px;
 }
+.banner-card:hover{
+  border: 2px solid white;
+}
 .medtext{
   font-size: 13;
 }
@@ -270,4 +273,5 @@ background-color: #f0f0f0;
 #blinkingItem {
   animation: blink 2s infinite;
 }
+
 
