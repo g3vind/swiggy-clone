@@ -10,13 +10,13 @@
 }
 
 .header {
-  height: 6.5rem;
+  height: 5.5rem;
   width: full;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: -10px;
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO */
@@ -123,9 +123,9 @@
 }
 .banner-shimmer{
   margin-top: -30px;
-  height: 200px;
+  height: 260px;
   width: 100vw;
-background-color: #f0f0f0;
+/* background-color: #f0f0f0; */
   margin: 20px;
 }
 .res-text{

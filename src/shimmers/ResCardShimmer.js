@@ -1,4 +1,4 @@
-const Shimmer = () => {
+const ResCardShimmer = () => {
   return (
     <>
       <span className="rest-text"></span>
@@ -29,4 +29,4 @@ const Shimmer = () => {
     </>
   );
 };
-export default Shimmer;
+export default ResCardShimmer;

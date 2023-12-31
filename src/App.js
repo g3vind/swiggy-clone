@@ -9,7 +9,7 @@ const Footer = lazy(() => import("./components/Footer"));
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Error } from "./pages/Error";
 import ResMenu from "./pages/ResMenu";
-import BannerShimmer from "./components/BannerShimmer";
+import BannerShimmer from "./shimmers/BannerShimmer";
 
 const AppLayout = () => {
   return (

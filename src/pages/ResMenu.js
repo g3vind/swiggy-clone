@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Shimmer from "../components/Shimmer";
+import ResCardShimmer from "../shimmers/ResCardShimmer";
 import { IMG_CDN_URL } from "../utils/constants";
 import { CiDiscount1 } from "react-icons/ci";
 import useResMenu from "../hooks/useResMenu";
@@ -18,7 +18,7 @@ const ResMenu = () => {
   };
 
   if (resInfo === null) {
-    return <Shimmer />;
+    return <ResCardShimmer />;
   }
   const {
     name,

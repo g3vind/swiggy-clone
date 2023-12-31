@@ -821,6 +821,6 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","lucide-react":"8oTgY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["fPoR4","1xC6H"], null, "parcelRequire6d1b")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","lucide-react":"8oTgY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["fPoR4","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=About.85356f1b.js.map

@@ -889,6 +889,6 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","lucide-react":"8oTgY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["3765M","1xC6H"], null, "parcelRequire6d1b")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","lucide-react":"8oTgY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["3765M","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Contact.3db2aa41.js.map

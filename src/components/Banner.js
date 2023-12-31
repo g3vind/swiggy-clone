@@ -1,6 +1,6 @@
 // Banner component
 import React from "react";
-import BannerShimmer from "./BannerShimmer";
+import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
 
 const Banner = ({ banners }) => {
@@ -8,7 +8,7 @@ const Banner = ({ banners }) => {
   const limitedBanners = banners.slice(0, 6);
 
   return (
-    <div className="flex flex-row mt-5 items-center justify-center">
+    <div className="flex flex-row mt-2 items-center justify-center">
       {limitedBanners.length > 0 ? (
         limitedBanners.map((banner) => (
           <div className="banner-card cursor-pointer" key={banner.id}>

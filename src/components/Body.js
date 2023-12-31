@@ -3,7 +3,7 @@ import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import { Link } from "react-router-dom";
-import Shimmer from "./Shimmer.js";
+import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
 
@@ -105,7 +105,7 @@ const Body = () => {
             </Link>
           ))
         ) : (
-          <Shimmer />
+          <ResCardShimmer />
         )}
       </div>
     </div>
