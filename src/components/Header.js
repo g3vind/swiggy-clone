@@ -1,33 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { LOGO_URL } from "../utils/constants.js";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../hooks/useOnlineStatus.js";
 
 const Header = () => {
   // state for login button text
   const [loginButton, setLoginButton] = useState(true);
-  // state for online/offline status
-  const [status, setStatus] = useState(true);
 
-  // useEffect for initial check and setting up event listeners
-  useEffect(() => {
-    // Function to update online status
-    const updateOnlineStatus = () => {
-      setStatus(navigator.onLine);
-    };
-
-    // Initial check
-    updateOnlineStatus();
-
-    // Set up event listeners for online/offline events
-    window.addEventListener("online", updateOnlineStatus);
-    window.addEventListener("offline", updateOnlineStatus);
-
-    // Clean up event listeners when the component is unmounted
-    return () => {
-      window.removeEventListener("online", updateOnlineStatus);
-      window.removeEventListener("offline", updateOnlineStatus);
-    };
-  }, []);
+  const onlineStatus = useOnlineStatus();
 
   return (
     <div className="header">
@@ -63,11 +43,9 @@ const Header = () => {
             </button>
           </Link>
           <div className="ml-8">
-            <li
-              id="blinkingItem"
-              className={status ? "text-green-500" : "text-red-500"}
-            >
-              {status ? "🟢" : "🔴 Offline"}
+            <li className="">
+              Online Status:
+              <span id="blinkingItem">{onlineStatus ? " 🟢" : " 🔴"}</span>
             </li>
           </div>
         </ul>

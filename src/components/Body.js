@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
 import { Link } from "react-router-dom";
 import Shimmer from "./Shimmer.js";
 import Banner from "./Banner.js";
+import Offline from "../pages/Offline.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -15,6 +17,8 @@ const Body = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const onlineStatus = useOnlineStatus();
 
   const fetchData = async () => {
     try {
@@ -51,6 +55,14 @@ const Body = () => {
     );
     return searchedData;
   };
+
+  if (onlineStatus === false) {
+    return (
+      <>
+        <Offline />
+      </>
+    );
+  }
 
   return (
     <div className="body">

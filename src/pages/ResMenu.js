@@ -58,9 +58,13 @@ const ResMenu = () => {
             }`}
           >
             {headerBanner?.isOpen ? (
-              <p id="blink">Currently Closed 🔴</p>
+              <p id="blink" className="font-bold">
+                Currently Closed 🔴
+              </p>
             ) : (
-              <p id="blink">Currently Open 🟢</p>
+              <p id="blink" className="font-bold">
+                Currently Open 🟢
+              </p>
             )}
           </h2>
           <button
