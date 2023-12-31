@@ -1,7 +1,10 @@
 import { SpinnerCircularFixed } from "spinners-react";
 function BannerShimmer() {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div
+      className="flex flex-col -mt-11
+     items-center justify-center"
+    >
       <h2 className="banner-shimmer relative -top-8 banner-text text-center bg-gray-900 text-gray-200 py-10 items-center justify-center text-xl pt-6">
         Looking for great food near you!
         <span>

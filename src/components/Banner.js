@@ -3,31 +3,41 @@ import React from "react";
 import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
 
-const Banner = ({ banners }) => {
+const Banner = ({ banners, bannerTitle }) => {
   // Limit the number of banners to 6
-  const limitedBanners = banners.slice(0, 6);
+  const limitedBanners = banners.slice(0, 7);
 
   return (
-    <div className="flex flex-row mt-2 items-center justify-center">
-      {limitedBanners.length > 0 ? (
-        limitedBanners.map((banner) => (
-          <div className="banner-card cursor-pointer" key={banner.id}>
-            <h2>{banner.header}</h2>
-            <div className="h-full overflow-hidden object-cover">
-              <img
-                className="h-55 w-44"
-                src={IMG_CDN_URL + banner.imageId}
-                alt={banner.action.text}
-              />
-              <span className=" relative ml-12 font-bold text-center">
-                {banner.action.text}
-              </span>
+    <div className="flex flex-col m-20 mt-2 items-center">
+      <div className="flex">
+        <span id="text" className="relative font-extrabold">
+          {bannerTitle}
+        </span>
+      </div>
+      <div className="flex">
+        {limitedBanners.length > 0 ? (
+          limitedBanners.map((banner) => (
+            <div
+              className="banner-card flex-row cursor-pointer"
+              key={banner.id}
+            >
+              {/* <h2>{banner.header}</h2> */}
+              <div className="h-full mt-4 overflow-hidden object-cover">
+                <img
+                  className="h-34 w-32"
+                  src={IMG_CDN_URL + banner.imageId}
+                  alt={banner.action.text}
+                />
+                <span className=" relative ml-12 font-bold text-center">
+                  {banner.action.text}
+                </span>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <BannerShimmer />
-      )}
+          ))
+        ) : (
+          <BannerShimmer />
+        )}
+      </div>
     </div>
   );
 };

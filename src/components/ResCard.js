@@ -9,7 +9,9 @@ const ResCard = ({ cloudinaryImageId, name, avgRating, cuisines, sla }) => {
         src={IMG_CDN_URL + cloudinaryImageId}
       />
       <div className="">
-        <h3 className="font-extrabold text-xl ml-4">{name}</h3>
+        <h3 className="font-extrabold text-xl ml-2 text-gray-700">
+          {name.slice(0, 20)}
+        </h3>
       </div>
 
       <h4>

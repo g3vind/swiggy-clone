@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
+import HR from "./HR.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -24,6 +25,7 @@ const Body = () => {
     try {
       const data = await fetch(API_CDN);
       const json = await data.json();
+      // console.log(json.data);
       setListOfRestaurants(
         !json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -32,6 +34,7 @@ const Body = () => {
           : json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
               ?.restaurants
       );
+
       setBannerData(
         json?.data?.cards[0]?.card?.card?.imageGridCards?.info.map(
           (bannerInfo) => ({
@@ -44,6 +47,7 @@ const Body = () => {
       setBannerTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setBodyTitle(json?.data?.cards[2]?.card?.card?.title);
       // console.log(json.data.cards);
+      console.log(bannerData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -67,7 +71,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="search">
-        <input
+        {/* <input
           value={searchText}
           onChange={(e) => {
             const text = e.target.value;
@@ -85,28 +89,39 @@ const Body = () => {
           type="text"
           placeholder="Search for restaurants, dishes and food"
           className="h-4 w-40 mt-2"
-        />
+        /> */}
       </div>
-      {/* BANNER TITLE */}
-      <span className="text-xl font-bold ml-16">{bannerTitle}</span>
+
       {/* ------------------BANNER COMPONENT----------------------------- */}
-      <Banner banners={bannerData} />
+      <Banner banners={bannerData} bannerTitle={bannerTitle} />
+
       {/* RES CARDS TITLE */}
-      <span className="text-xl font-bold -mt-8 ml-16">{bodyTitle}</span>
+      <span id="txt" className="font-extrabold -mt-12 ml-32">
+        {bodyTitle}
+      </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
-      <div className="res-container">
-        {listOfRestaurants?.length > 0 ? (
-          listOfRestaurants.map((restaurant) => (
-            <Link
-              key={restaurant.info.id}
-              to={"/restaurants/" + restaurant.info.id}
-            >
-              <ResCard {...restaurant.info} />
-            </Link>
-          ))
-        ) : (
-          <ResCardShimmer />
-        )}
+      <div className="flex flex-wrap flex-col ml-28 justify-center">
+        <div></div>
+        <div className="flex flex-wrap">
+          {/* row di */}
+          <div className="flex-row">
+            <div className="flex overflow-x-auto">
+              {listOfRestaurants?.length > 0 ? (
+                listOfRestaurants.map((restaurant) => (
+                  <Link
+                    key={restaurant.info.id}
+                    to={"/restaurants/" + restaurant.info.id}
+                    className="mr-4 mb-4"
+                  >
+                    <ResCard {...restaurant.info} />
+                  </Link>
+                ))
+              ) : (
+                <ResCardShimmer />
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
