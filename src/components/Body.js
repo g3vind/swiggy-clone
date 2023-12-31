@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
 import ResCard from "./ResCard";
@@ -52,6 +52,7 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
+
   // function to handle search text
   const handleSearch = (text) => {
     const searchedData = listOfRestaurants.filter((res) =>
@@ -61,17 +62,14 @@ const Body = () => {
   };
 
   if (onlineStatus === false) {
-    return (
-      <>
-        <Offline />
-      </>
-    );
+    return <Offline />;
   }
 
   return (
-    <div className="body">
+    <div className="body overflow-hidden">
       <div className="search">
-        {/* <input
+        {/* 
+        <input
           value={searchText}
           onChange={(e) => {
             const text = e.target.value;
@@ -89,7 +87,8 @@ const Body = () => {
           type="text"
           placeholder="Search for restaurants, dishes and food"
           className="h-4 w-40 mt-2"
-        /> */}
+        />
+        */}
       </div>
 
       {/* ------------------BANNER COMPONENT----------------------------- */}
@@ -100,12 +99,11 @@ const Body = () => {
         {bodyTitle}
       </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
-      <div className="flex flex-wrap flex-col ml-28 justify-center">
-        <div></div>
+      <div className="scrollable-cards-container">
         <div className="flex">
           {/* row di */}
           <div className="flex-row">
-            <div className="flex overflow-x-auto">
+            <div className="flex overflow-y-auto">
               {listOfRestaurants?.length > 0 ? (
                 listOfRestaurants.map((restaurant) => (
                   <Link
