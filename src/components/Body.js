@@ -95,11 +95,11 @@ const Body = () => {
       <Banner banners={bannerData} bannerTitle={bannerTitle} />
 
       {/* RES CARDS TITLE */}
-      <span id="txt" className="font-extrabold -mt-12 ml-32">
+      <span id="txt" className="font-extrabold -mt-16 ml-32 mb-4">
         {bodyTitle}
       </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
-      <div className="scrollable-cards-container">
+      <div className="scrollable-cards-container ml-24">
         <div className="flex">
           {/* row di */}
           <div className="flex-row">

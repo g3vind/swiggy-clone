@@ -21,14 +21,14 @@ const Banner = ({ banners, bannerTitle }) => {
               className="banner-card flex-row cursor-pointer"
               key={banner.id}
             >
-              {/* <h2>{banner.header}</h2> */}
               <div className="h-full mt-4 overflow-hidden object-cover">
                 <img
                   className="h-34 w-32"
+                  style={{ objectPosition: "top" }} // Adjust the object position
                   src={IMG_CDN_URL + banner.imageId}
                   alt={banner.action.text}
                 />
-                <span className=" relative ml-12 font-bold text-center">
+                <span className="relative ml-10 font-bold text-gray-500 text-center">
                   {banner.action.text}
                 </span>
               </div>

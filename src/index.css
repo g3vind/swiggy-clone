@@ -142,17 +142,24 @@
   padding: 2px;
   border-radius: 8px;
 }
-.banner-card{
-  border-radius: 50%;
+.banner-card {
+  /* border-radius: 50%; */
   padding: 27px;
   position: relative;
-  /* margin-left: 35px; */
+  overflow: hidden; /* Ensure content doesn't overflow the container */
   transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
   }
 }
+
+.banner-card img {
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  
+}
+
 .medtext{
   font-size: 13;
 }

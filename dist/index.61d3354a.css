@@ -283,8 +283,8 @@ img, video {
   margin-bottom: 1.5rem;
 }
 
-.-mt-11 {
-  margin-top: -2.75rem;
+.-mt-10 {
+  margin-top: -2.5rem;
 }
 
 .-mt-12 {
@@ -293,6 +293,10 @@ img, video {
 
 .-mt-14 {
   margin-top: -3.5rem;
+}
+
+.-mt-16 {
+  margin-top: -4rem;
 }
 
 .-mt-6 {
@@ -315,16 +319,16 @@ img, video {
   margin-bottom: 15rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
+.ml-10 {
+  margin-left: 2.5rem;
 }
 
 .ml-2 {
   margin-left: .5rem;
 }
 
-.ml-28 {
-  margin-left: 7rem;
+.ml-24 {
+  margin-left: 6rem;
 }
 
 .ml-32 {
@@ -377,10 +381,6 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.-mt-10 {
-  margin-top: -2.5rem;
 }
 
 .block {
@@ -487,10 +487,6 @@ img, video {
   flex-direction: column;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
 .place-content-center {
   place-content: center;
 }
@@ -585,8 +581,8 @@ img, video {
   overflow: hidden;
 }
 
-.overflow-x-auto {
-  overflow-x: auto;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .whitespace-nowrap {
@@ -1041,14 +1037,19 @@ img, video {
 }
 
 .banner-card {
-  border-radius: 50%;
   padding: 27px;
   transition: transform .2s ease-in-out;
   position: relative;
+  overflow: hidden;
 }
 
 .banner-card:hover {
   transform: scale(1.05);
+}
+
+.banner-card img {
+  width: 100%;
+  height: auto;
 }
 
 .medtext {
@@ -1176,6 +1177,11 @@ img, video {
 
 #txt {
   font-size: 23px;
+}
+
+.scrollable-cards-container {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .placeholder\:text-gray-400::placeholder {
