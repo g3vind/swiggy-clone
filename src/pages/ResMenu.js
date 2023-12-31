@@ -1,26 +1,14 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
 import Shimmer from "../components/Shimmer";
 import { IMG_CDN_URL } from "../utils/constants";
 import { CiDiscount1 } from "react-icons/ci";
+import useResMenu from "../hooks/useResMenu";
+import { MdDeliveryDining } from "react-icons/md";
 
 const ResMenu = () => {
-  // state to store rest menu data
-  const [resInfo, setResInfo] = useState(null);
-
   const { resId } = useParams();
+  const resInfo = useResMenu(resId);
 
-  // use effect to load data in every render
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-  // async function to fetch data
-  const fetchMenu = async () => {
-    const response = await fetch(MENU_API + resId);
-    const json = await response.json();
-    setResInfo(json.data);
-  };
   if (resInfo === null) {
     return <Shimmer />;
   }
@@ -30,19 +18,20 @@ const ResMenu = () => {
     city,
     areaName,
     avgRating,
-    labels,
+    headerBanner,
     locality,
     cloudinaryImageId,
     costForTwoMessage,
     totalRatings,
     aggregatedDiscountInfoV2,
+    feeDetails,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
   const { itemCards } =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
 
-  console.log(itemCards);
+  console.log(resInfo);
 
   return (
     <>
@@ -54,29 +43,45 @@ const ResMenu = () => {
             {totalRatings}
             +ratings
           </p>
+          <h2
+            className={`text-center relative left-32 mt-8 font-bold text-2xl ${
+              headerBanner?.isOpen ? "text-red-500" : "text-green-500"
+            }`}
+          >
+            {headerBanner?.isOpen ? "Currently Closed 😞" : "Currently Open 😃"}
+          </h2>
         </div>
         <div className="right">
-          <h1 className="text-2xl font-bold mt-5 mb-2">{name}</h1>
+          <h1 className="text-3xl font-bold mt-5 mb-2">{name}</h1>
           <hr></hr>
           <div>
-            <h2>{cuisines?.join(", ")}</h2>
+            <h2 className="text-xl font-bold">{cuisines?.join(", ")}</h2>
           </div>
           <hr></hr>
           <div>
             <h2>
               <p className="font-medium">
-                Address: {locality},{areaName},
+                <span className="font-semibold">Address: </span> {locality},
+                {areaName},
               </p>
               <p>
-                City:
-                <span className="font-bold">{city}</span>
+                <span className="font-semibold">City:</span>
+                <span> {city}</span>
               </p>
             </h2>
+            <h3 className="inline-block">
+              <span className="font-bold">
+                {" "}
+                Delivery Charge{" "}
+                <MdDeliveryDining className="inline-block font-semibold" />:{" "}
+              </span>
+              <span> ₹{feeDetails?.amount}</span>
+            </h3>
           </div>
           <hr></hr>
           <div className="discount">
             <p className="flex items-center">
-              <span className="mr-2">
+              <span className="mr-2 h-4 w-3">
                 <CiDiscount1 />
               </span>
               {aggregatedDiscountInfoV2?.header}
