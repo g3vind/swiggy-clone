@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { LOGO_URL } from "../utils/constants.js";
+// import { LOGO_URL } from "../utils/constants.js";
+import LOGO from "../images/logo.svg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../hooks/useOnlineStatus.js";
 
@@ -14,7 +15,7 @@ const Header = () => {
       {/* HEADER LOGO  */}
       <div className="logo-container">
         <Link to="/">
-          <img src={LOGO_URL} alt="LOGO"></img>
+          <img src={LOGO} alt="LOGO"></img>
         </Link>
       </div>
       {/* NAV ITEMS */}

@@ -381,20 +381,12 @@ img, video {
   margin-left: 2rem;
 }
 
-.ml-80 {
-  margin-left: 20rem;
-}
-
 .mr-2 {
   margin-right: .5rem;
 }
 
 .mt-10 {
   margin-top: 2.5rem;
-}
-
-.mt-16 {
-  margin-top: 4rem;
 }
 
 .mt-2 {
@@ -423,6 +415,10 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -553,6 +549,10 @@ img, video {
   place-items: center;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -565,6 +565,10 @@ img, video {
   justify-content: space-between;
 }
 
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
 .justify-items-center {
   justify-items: center;
 }
@@ -575,6 +579,18 @@ img, video {
 
 .gap-1\.5 {
   gap: .375rem;
+}
+
+.gap-2 {
+  gap: .5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-x-4 {
@@ -625,6 +641,10 @@ img, video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-full {
@@ -717,6 +737,10 @@ img, video {
   padding: .375rem;
 }
 
+.p-14 {
+  padding: 3.5rem;
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -729,16 +753,8 @@ img, video {
   padding: 2rem;
 }
 
-.p-20 {
-  padding: 5rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
-}
-
-.p-14 {
-  padding: 3.5rem;
+.p-12 {
+  padding: 3rem;
 }
 
 .px-2 {
@@ -796,6 +812,10 @@ img, video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
 }
 
 .text-center {
@@ -915,6 +935,11 @@ img, video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -960,8 +985,8 @@ img, video {
 }
 
 .logo-container img {
-  width: 100px;
-  height: 70px;
+  width: 80px;
+  height: 50px;
   margin: 17px;
 }
 
@@ -1290,6 +1315,24 @@ img, video {
   opacity: .7;
 }
 
+@media (width >= 640px) {
+  .sm\:grid {
+    display: grid;
+  }
+
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .sm\:overflow-hidden {
+    overflow: hidden;
+  }
+}
+
 @media (width >= 768px) {
   .md\:my-24 {
     margin-top: 6rem;
@@ -1373,10 +1416,6 @@ img, video {
 
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
   }
 
   .lg\:w-1\/5 {
