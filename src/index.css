@@ -270,8 +270,21 @@ background-color: #f0f0f0;
   }
 }
 
-#blinkingItem {
+#blinkingItem, #blinking {
   animation: blink 2s infinite;
+}
+
+/* discount button */
+#discount-btn{
+  position: relative;
+  left: 21vw;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 16px;
+  line-height: 30px;
+}
+.discount-text{
+  width: fit-content;
 }
 
 
