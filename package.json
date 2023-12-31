@@ -2,7 +2,7 @@
   "name": "food-express",
   "version": "1.0.0",
   "description": "namaste react course",
-  "main": "App.js",
+  
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
