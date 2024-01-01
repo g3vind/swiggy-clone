@@ -1,6 +1,6 @@
 // FAQCard.jsx
 
-import { HorizontalRollar } from "./HorizontalRollar";
+import HorizontalRollar from "./HorizontalRollar";
 import openMenuIcon from "../images/open_menu.svg";
 import closeMenuIcon from "../images/close_menu.svg";
 

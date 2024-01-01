@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 function Offers() {
   const { topRestaurants } = useRestaurantsData();
-  console.log(topRestaurants);
 
   if (!topRestaurants) return <OffersShimmer />;
 
@@ -17,7 +16,7 @@ function Offers() {
           Best offers with online food delivery
         </h1>
         <FilterRes />
-        <div className="no-scrollbar mt-8 flex flex-row  flex-wrap items-center justify-evenly gap-3">
+        <div className="no-scrollbar mt-8 flex flex-row m-10  flex-wrap items-center justify-between gap-3">
           {topRestaurants?.map((restaurant) => (
             <Link
               to={`${restaurant.info.name}/${restaurant.info.id}`}

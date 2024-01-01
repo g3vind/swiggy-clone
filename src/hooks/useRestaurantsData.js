@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { DATA_URL } from "../utils/constants";
+import { API_CDN } from "../utils/constants";
 import getData from "../utils/getData";
 
 function useRestaurantsData() {
@@ -11,7 +11,7 @@ function useRestaurantsData() {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getData(DATA_URL);
+      const data = await getData(API_CDN);
       setRestaurants(data?.data);
 
       if (data?.data?.cards[0]?.card?.card?.id === "topical_banner") {

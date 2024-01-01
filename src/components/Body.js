@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
+import HorizontalRollar from "./HorizontalRollar";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-
+  const [topRestChain, setTopRestChain] = useState([]);
   const [bannerData, setBannerData] = useState([]);
   const [bannerTitle, setBannerTitle] = useState("");
   const [bodyTitle, setBodyTitle] = useState("");
@@ -24,16 +25,14 @@ const Body = () => {
     try {
       const data = await fetch(API_CDN);
       const json = await data.json();
-      // console.log(json.data);
       setListOfRestaurants(
-        !json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
-          ? json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants
-          : json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants
       );
-
+      setTopRestChain(
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      );
+      console.log(topRestChain);
       setBannerData(
         json?.data?.cards[0]?.card?.card?.imageGridCards?.info.map(
           (bannerInfo) => ({
@@ -45,7 +44,6 @@ const Body = () => {
       );
       setBannerTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setBodyTitle(json?.data?.cards[2]?.card?.card?.title);
-      // console.log(bannerData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -60,30 +58,30 @@ const Body = () => {
       {/* ------------------BANNER COMPONENT----------------------------- */}
       <Banner banners={bannerData} bannerTitle={bannerTitle} />
 
+      {/* -----------------------TOP REST CHAINS-------------------------- */}
+
       {/* RES CARDS TITLE */}
-      <span id="txt" className="font-extrabold relative -mt-32 ml-32 mb-4">
+      <span id="txt" className="font-extrabold relative -mt-44 ml-32 mb-12">
         {bodyTitle}
       </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
       <div className="ml-24">
-        <div className="">
-          <div className="">
-            <div className="flex flex-wrap">
-              {listOfRestaurants?.length > 0 ? (
-                listOfRestaurants.map((restaurant, index) => (
-                  <Link
-                    key={restaurant?.info?.id}
-                    to={"/restaurants/" + restaurant?.info?.id}
-                    className={`mr-4 ${index % 5 === 4 ? "mb-4" : ""}`} // Add margin bottom every 5th element
-                  >
-                    <ResCard {...restaurant.info} />
-                  </Link>
-                ))
-              ) : (
-                <ResCardShimmer />
-              )}
-            </div>
-          </div>
+        {/* <HorizontalRollar /> */}
+
+        <div className="flex flex-wrap p-7">
+          {listOfRestaurants?.length > 0 ? (
+            listOfRestaurants.map((restaurant, index) => (
+              <Link
+                key={restaurant?.info?.id}
+                to={"/restaurants/" + restaurant?.info?.id}
+                className={`mr-4 ${index % 5 === 4 ? "mb-6" : ""}`} // Add margin bottom every 5th element
+              >
+                <ResCard {...restaurant.info} />
+              </Link>
+            ))
+          ) : (
+            <ResCardShimmer />
+          )}
         </div>
       </div>
     </div>

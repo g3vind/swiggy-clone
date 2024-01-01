@@ -618,10 +618,9 @@ var _s = $RefreshSig$();
 function Offers() {
     _s();
     const { topRestaurants } = (0, _useRestaurantsDataDefault.default)();
-    console.log(topRestaurants);
     if (!topRestaurants) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _offersShimmerDefault.default), {}, void 0, false, {
         fileName: "src/pages/Offers.js",
-        lineNumber: 11,
+        lineNumber: 10,
         columnNumber: 31
     }, this);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -634,16 +633,16 @@ function Offers() {
                     children: "Best offers with online food delivery"
                 }, void 0, false, {
                     fileName: "src/pages/Offers.js",
-                    lineNumber: 16,
+                    lineNumber: 15,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _filterResDefault.default), {}, void 0, false, {
                     fileName: "src/pages/Offers.js",
-                    lineNumber: 19,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "no-scrollbar mt-8 flex flex-row  flex-wrap items-center justify-evenly gap-3",
+                    className: "no-scrollbar mt-8 flex flex-row m-10  flex-wrap items-center justify-between gap-3",
                     children: topRestaurants?.map((restaurant)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `${restaurant.info.name}/${restaurant.info.id}`,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
@@ -655,28 +654,28 @@ function Offers() {
                                 restaurant: restaurant.info
                             }, void 0, false, {
                                 fileName: "src/pages/Offers.js",
-                                lineNumber: 26,
+                                lineNumber: 25,
                                 columnNumber: 15
                             }, this)
                         }, restaurant.info.id, false, {
                             fileName: "src/pages/Offers.js",
-                            lineNumber: 22,
+                            lineNumber: 21,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "src/pages/Offers.js",
-                    lineNumber: 20,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/pages/Offers.js",
-            lineNumber: 15,
+            lineNumber: 14,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "src/pages/Offers.js",
-        lineNumber: 14,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
@@ -718,7 +717,7 @@ function useRestaurantsData() {
     const [restaurantsList, setRestaurantsList] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         async function fetchData() {
-            const data = await (0, _getDataDefault.default)((0, _constants.DATA_URL));
+            const data = await (0, _getDataDefault.default)((0, _constants.API_CDN));
             setRestaurants(data?.data);
             if (data?.data?.cards[0]?.card?.card?.id === "topical_banner") setBestOffers(data?.data?.cards[0]?.card?.card?.imageGridCards?.info);
             else setBestOffers([]);
@@ -839,7 +838,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 function OffersShimmer() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-wrap flex-row",
+        className: "flex flex-wrap flex-row m-20",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "shimmer-card"
@@ -909,62 +908,6 @@ function OffersShimmer() {
             }, void 0, false, {
                 fileName: "src/shimmers/OffersShimmer.js",
                 lineNumber: 15,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 18,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 20,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 21,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 22,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "shimmer-card"
-            }, void 0, false, {
-                fileName: "src/shimmers/OffersShimmer.js",
-                lineNumber: 23,
                 columnNumber: 7
             }, this)
         ]

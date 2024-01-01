@@ -14,10 +14,10 @@ const ResCard = ({
 
   return (
     <div
-      className={`${cardWidth} mb-6  flex flex-col justify-center gap-2 transition-all hover:scale-95`}
+      className={`${cardWidth} mb-6  flex flex-col justify-center gap-3 transition-all hover:scale-95`}
     >
       <div
-        className={`${cardWidth} h-40 relative justify-center overflow-hidden rounded-2xl bg-cover bg-center`}
+        className={`${cardWidth} h-40 relative justify-center gap-3 overflow-hidden rounded-2xl bg-cover bg-center`}
       >
         <img
           src={`${IMG_CDN_URL + cloudinaryImageId}`}

@@ -399,6 +399,22 @@ img, video {
   margin-top: 2rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.-mt-44 {
+  margin-top: -11rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .line-clamp-1 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -702,6 +718,14 @@ img, video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.p-7 {
+  padding: 1.75rem;
 }
 
 .px-10 {
