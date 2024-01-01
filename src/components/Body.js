@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
-import HR from "./HR.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -46,8 +45,7 @@ const Body = () => {
       );
       setBannerTitle(json?.data?.cards[0]?.card?.card?.header?.title);
       setBodyTitle(json?.data?.cards[2]?.card?.card?.title);
-      // console.log(json.data.cards);
-      console.log(bannerData);
+      // console.log(bannerData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -66,8 +64,8 @@ const Body = () => {
   }
 
   return (
-    <div className="body overflow-hidden">
-      <div className="search">
+    <div className="overflow-hidden">
+      {/* <div className="search">
         {/* 
         <input
           value={searchText}
@@ -88,28 +86,27 @@ const Body = () => {
           placeholder="Search for restaurants, dishes and food"
           className="h-4 w-40 mt-2"
         />
-        */}
-      </div>
+        
+      </div> */}
 
       {/* ------------------BANNER COMPONENT----------------------------- */}
       <Banner banners={bannerData} bannerTitle={bannerTitle} />
 
       {/* RES CARDS TITLE */}
-      <span id="txt" className="font-extrabold -mt-16 ml-32 mb-4">
+      <span id="txt" className="font-extrabold relative -mt-32 ml-32 mb-4">
         {bodyTitle}
       </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
-      <div className="scrollable-cards-container ml-24">
+      <div className="ml-24">
         <div className="flex">
-          {/* row di */}
-          <div className="flex-row">
-            <div className="flex overflow-y-auto">
+          <div className="flex-col flex-wrap">
+            <div className="flex ">
               {listOfRestaurants?.length > 0 ? (
                 listOfRestaurants.map((restaurant) => (
                   <Link
-                    key={restaurant.info.id}
-                    to={"/restaurants/" + restaurant.info.id}
-                    className="mr-4 mb-4"
+                    key={restaurant?.info?.id}
+                    to={"/restaurants/" + restaurant?.info?.id}
+                    className="mr-4"
                   >
                     <ResCard {...restaurant.info} />
                   </Link>

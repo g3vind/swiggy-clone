@@ -11,12 +11,10 @@
 
 .header {
   height: 5.5rem;
-  width: full;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: -10px;
-  box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
+box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 /* LOGO */
@@ -30,7 +28,7 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  margin-right: 40px;
+  margin-right: 20px;
   margin: 20px;
   padding: 0px 20px;
 }
@@ -106,15 +104,14 @@
 /* FILTER BUTTON */
 
 /* SHIMMER UI */
-.shimmer-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+
 .shimmer-card {
   height: 180px;
-  width: 200px;
+  width: 210px;
   background-color: #f0f0f0;
-  margin: 22px;
+  margin-top: -30px;
+  margin: 20px;
+  padding: 8px;
   border-radius: 13px;
 }
 .banner-shimmer{
@@ -154,18 +151,14 @@
   }
 }
 
-.banner-card img {
-  width: 100%; /* Ensure the image takes up the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  
-}
+
 
 .medtext{
   font-size: 13;
 }
 .spinner{
   margin-left: 48vw;
-  margin-top: 20px;
+  margin-top: 45px;
 }
 /* RES MENU */
 .menu-container{
@@ -301,8 +294,5 @@
   
   font-size: 23px;
 }
-.scrollable-cards-container {
-  max-height: 400px; /* Adjust the height as needed */
-  overflow-y: auto;
-}
+
 

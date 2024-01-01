@@ -1,6 +1,5 @@
 # Dependency directories
 /node_modules
-dist
 # Build output
 *.parcel-cache
 # Logs

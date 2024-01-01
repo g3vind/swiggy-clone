@@ -1,24 +1,7 @@
 const ResCardShimmer = () => {
   return (
     <>
-      <span className="rest-text"></span>
-      <div className="shimmer-container">
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-      </div>
-      <div className="shimmer-container">
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-        <div className="shimmer-card"></div>
-      </div>
-      <div className="shimmer-container">
+      <div className="flex flex-wrap flex-row">
         <div className="shimmer-card"></div>
         <div className="shimmer-card"></div>
         <div className="shimmer-card"></div>
