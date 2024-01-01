@@ -9,7 +9,7 @@ import Offline from "../pages/Offline.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState("");
+
   const [bannerData, setBannerData] = useState([]);
   const [bannerTitle, setBannerTitle] = useState("");
   const [bodyTitle, setBodyTitle] = useState("");
@@ -51,44 +51,12 @@ const Body = () => {
     }
   };
 
-  // function to handle search text
-  const handleSearch = (text) => {
-    const searchedData = listOfRestaurants.filter((res) =>
-      res.info.name.toLowerCase().includes(text.toLowerCase())
-    );
-    return searchedData;
-  };
-
   if (onlineStatus === false) {
     return <Offline />;
   }
 
   return (
     <div className="overflow-hidden">
-      {/* <div className="search">
-        {/* 
-        <input
-          value={searchText}
-          onChange={(e) => {
-            const text = e.target.value;
-            setSearchText(text);
-
-            if (text.trim() === "") {
-              // If search text is empty, revert to the original data
-              fetchData();
-            } else {
-              // Otherwise, perform the search
-              const searchedData = handleSearch(text);
-              setListOfRestaurants(searchedData);
-            }
-          }}
-          type="text"
-          placeholder="Search for restaurants, dishes and food"
-          className="h-4 w-40 mt-2"
-        />
-        
-      </div> */}
-
       {/* ------------------BANNER COMPONENT----------------------------- */}
       <Banner banners={bannerData} bannerTitle={bannerTitle} />
 
@@ -98,15 +66,15 @@ const Body = () => {
       </span>
       {/*----------------------- RES CARDS ----------------------------------*/}
       <div className="ml-24">
-        <div className="flex">
-          <div className="flex-col flex-wrap">
-            <div className="flex ">
+        <div className="">
+          <div className="">
+            <div className="flex flex-wrap">
               {listOfRestaurants?.length > 0 ? (
-                listOfRestaurants.map((restaurant) => (
+                listOfRestaurants.map((restaurant, index) => (
                   <Link
                     key={restaurant?.info?.id}
                     to={"/restaurants/" + restaurant?.info?.id}
-                    className="mr-4"
+                    className={`mr-4 ${index % 5 === 4 ? "mb-4" : ""}`} // Add margin bottom every 5th element
                   >
                     <ResCard {...restaurant.info} />
                   </Link>

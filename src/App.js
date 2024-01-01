@@ -2,10 +2,10 @@ import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-const About = lazy(() => import("./pages/About"));
-const Contact = lazy(() => import("./pages/Contact"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Footer = lazy(() => import("./components/Footer"));
+const Search = lazy(() => import("./pages/Search"));
+const Offers = lazy(() => import("./pages/Offers"));
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Error } from "./pages/Error";
 import ResMenu from "./pages/ResMenu";
@@ -32,18 +32,26 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: "/help",
+        path: "/search",
         element: (
           <Suspense fallback={<BannerShimmer />}>
-            <Help />
+            <Search />
           </Suspense>
         ),
       },
       {
-        path: "/contact",
+        path: "/offers",
         element: (
           <Suspense fallback={<BannerShimmer />}>
-            <Contact />
+            <Offers />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/help",
+        element: (
+          <Suspense fallback={<BannerShimmer />}>
+            <Help />
           </Suspense>
         ),
       },

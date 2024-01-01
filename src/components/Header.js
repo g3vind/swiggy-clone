@@ -30,7 +30,7 @@ const Header = () => {
               Search
             </li>
           </Link>
-          <Link to="/about">
+          <Link to="/offers">
             <li className="flex items-center justify-center">
               <span className="p-2">
                 <BadgePercent size={18} />
@@ -46,7 +46,7 @@ const Header = () => {
               Help
             </li>
           </Link>
-          <Link to="/contact">
+          <Link to="/sign-in">
             <li className="flex items-center justify-center">
               <span className="p-2">
                 <FaRegUser size={18} />

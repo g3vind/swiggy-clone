@@ -1,5 +1,6 @@
 import getData from "../utils/getData";
 import { useState, useEffect } from "react";
+import { HELP_API } from "../utils/constants";
 import { FAQCard } from "../components/FAQCard";
 
 export default function Help() {
@@ -13,9 +14,7 @@ export default function Help() {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await getData(
-        "https://www.swiggy.com/dapi/support/issues/faq?"
-      );
+      const data = await getData(HELP_API);
       setFaqs(data?.data?.issues?.data);
     }
 
@@ -23,7 +22,7 @@ export default function Help() {
   }, []);
 
   return (
-    <div className="w-full bg-[#37718E] p-14 pt-20 sm:px-8 xs:px-5">
+    <div className="w-full bg-[#37718E] p-14 pt-14 sm:px-8 xs:px-5">
       <div>
         <div className="px-10 xs:px-5">
           <h2 className="mb-1 text-3xl font-bold text-white xs:text-2xl">

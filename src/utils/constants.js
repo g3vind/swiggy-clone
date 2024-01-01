@@ -10,5 +10,7 @@ export const BANNER_API_CDN =
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.962163&lng=79.1506201&restaurantId=";
 
-export const HELP_API =
-  "https://www.swiggy.com/mapi/support/v3/issues/faq?loadConversations=true";
+export const HELP_API = "https://www.swiggy.com/dapi/support/issues/faq?";
+
+export const DATA_URL =
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.962163&lng=79.1506201&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
