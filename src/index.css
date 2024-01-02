@@ -164,10 +164,7 @@ box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
   margin-top: 45px;
 }
 /* RES MENU */
-.menu-container{
-  display: flex;
-  flex-direction: row;
-}
+
 .left img{
   height: 210px;
   width: 270px;
@@ -209,39 +206,17 @@ box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 .dish-card {
-  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-
   &:hover {
     transform: scale(1.05);
   }
 }
 
-.dish-image-container img {
-  width: 100%;
-  height: 75px; 
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
-}
 
-.dish-details {
-  padding: 10px;
-}
 
-.dish-name {
-  font-weight: bold;
-  margin: 0;
-}
-
-.dish-price {
-  margin: 0;
-  color: red;
-
-}
 /* BLINKING */
 @keyframes blink {
   0%, 100% {
