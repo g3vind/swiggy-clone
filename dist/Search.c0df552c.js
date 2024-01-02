@@ -609,46 +609,61 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _lucideReact = require("lucide-react");
 var _searchShimmer = require("../shimmers/SearchShimmer");
 var _searchShimmerDefault = parcelHelpers.interopDefault(_searchShimmer);
+var _usePopularCuisines = require("../hooks/usePopularCuisines");
+var _usePopularCuisinesDefault = parcelHelpers.interopDefault(_usePopularCuisines);
+var _banner = require("../components/Banner");
+var _bannerDefault = parcelHelpers.interopDefault(_banner);
 function SearchComponent() {
+    console.log((0, _usePopularCuisinesDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex justify-center mt-10",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "relative",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        style: {
-                            width: "60vw"
-                        },
-                        className: "h-12 rounded-md border border-black/30 bg-transparent px-4 py-2 text-sm placeholder:text-gray-500 placeholder:font-bold focus:outline-none focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
-                        type: "text",
-                        placeholder: "Search for restaurants and food"
-                    }, void 0, false, {
-                        fileName: "src/pages/Search.js",
-                        lineNumber: 9,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "absolute top-0 right-0 pr-4 h-full flex items-center",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lucideReact.Search), {}, void 0, false, {
+            className: "flex justify-center mt-10 mb-20",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "relative",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            style: {
+                                width: "60vw"
+                            },
+                            className: "h-12 rounded-md border border-black/30 bg-transparent px-4 py-2 text-sm placeholder:text-gray-500 placeholder:font-bold focus:outline-none focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
+                            type: "text",
+                            placeholder: "Search for restaurants and food"
+                        }, void 0, false, {
                             fileName: "src/pages/Search.js",
-                            lineNumber: 16,
-                            columnNumber: 13
+                            lineNumber: 13,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "absolute top-0 right-0 pr-4 h-full flex items-center",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lucideReact.Search), {}, void 0, false, {
+                                fileName: "src/pages/Search.js",
+                                lineNumber: 20,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "src/pages/Search.js",
+                            lineNumber: 19,
+                            columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "src/pages/Search.js",
-                        lineNumber: 15,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/pages/Search.js",
-                lineNumber: 8,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
+                    ]
+                }, void 0, true, {
+                    fileName: "src/pages/Search.js",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                    className: "text-4xl",
+                    children: (0, _usePopularCuisinesDefault.default)
+                }, void 0, false, {
+                    fileName: "src/pages/Search.js",
+                    lineNumber: 23,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "src/pages/Search.js",
-            lineNumber: 7,
+            lineNumber: 11,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -662,7 +677,7 @@ $RefreshReg$(_c, "SearchComponent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","lucide-react":"8oTgY","../shimmers/SearchShimmer":"gE8nt"}],"gE8nt":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../shimmers/SearchShimmer":"gE8nt","../hooks/usePopularCuisines":"dRd7n","../components/Banner":"eQaZO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gE8nt":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$dfdb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -2394,6 +2409,49 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}]},["1IgUu","1xC6H"], null, "parcelRequirece0d")
+},{"24ba1e58d167a82c":"jZTZJ","898bc82f39d83f7c":"fqKuf"}],"dRd7n":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a5d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a5d3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _getData = require("../utils/getData");
+var _getDataDefault = parcelHelpers.interopDefault(_getData);
+var _constants = require("../utils/constants");
+var _s = $RefreshSig$();
+function usePopularCuisines() {
+    _s();
+    const [popularCuisines, setPopularCuisines] = (0, _react.useState)(null);
+    const [title, setTitle] = (0, _react.useState)("");
+    (0, _react.useEffect)(()=>{
+        async function fetchData() {
+            try {
+                const data = await (0, _getDataDefault.default)((0, _constants.POPULAR_CUISINES));
+                setPopularCuisines(data?.data?.cards?.find((item)=>item?.card?.card?.imageGridCards?.info)?.card?.card?.imageGridCards?.info || []);
+                setTitle(data?.data?.cards[1]?.card?.card?.header?.title);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+        fetchData();
+    }, []);
+    return {
+        popularCuisines,
+        title
+    };
+}
+_s(usePopularCuisines, "unj+nNYtGWayuV/QjTLF8hY9vCE=");
+exports.default = usePopularCuisines;
+
+  $parcel$ReactRefreshHelpers$a5d3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../utils/getData":"jrHwE","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1IgUu","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Search.c0df552c.js.map

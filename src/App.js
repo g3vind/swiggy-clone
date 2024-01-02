@@ -6,11 +6,13 @@ const Cart = lazy(() => import("./pages/Cart"));
 const Footer = lazy(() => import("./components/Footer"));
 const Search = lazy(() => import("./pages/Search"));
 const Offers = lazy(() => import("./pages/Offers"));
+const SignIn = lazy(() => import("./pages/SignIn"));
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Error } from "./pages/Error";
 import ResMenu from "./pages/ResMenu";
 import BannerShimmer from "./shimmers/BannerShimmer";
 import Help from "./pages/Help";
+import EmptyCart from "./components/EmptyCart";
 
 const AppLayout = () => {
   return (
@@ -59,10 +61,11 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: (
           <Suspense fallback={<BannerShimmer />}>
-            <Cart />
+            <EmptyCart />
           </Suspense>
         ),
       },
+
       {
         path: "/restaurants/:resId",
         element: <ResMenu />,

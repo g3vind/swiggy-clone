@@ -1,10 +1,14 @@
 import { Search } from "lucide-react";
 import SearchShimmer from "../shimmers/SearchShimmer";
+import popularCuisines from "../hooks/usePopularCuisines";
+import title from "../hooks/usePopularCuisines";
+import Banner from "../components/Banner";
 
 export default function SearchComponent() {
+  console.log(popularCuisines);
   return (
     <>
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 mb-20">
         <div className="relative">
           <input
             style={{ width: "60vw" }}
@@ -16,6 +20,7 @@ export default function SearchComponent() {
             <Search />
           </div>
         </div>
+        <h1 className="text-4xl">{title}</h1>
       </div>
     </>
   );

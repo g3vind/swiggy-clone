@@ -7,9 +7,6 @@ import { FaRegUser } from "react-icons/fa";
 
 const Header = () => {
   // state for login button text
-  const [loginButton, setLoginButton] = useState(true);
-
-  const onlineStatus = useOnlineStatus();
 
   return (
     <div className="header">
@@ -46,17 +43,10 @@ const Header = () => {
               Help
             </li>
           </Link>
-          <Link to="/sign-in">
-            <li className="flex items-center justify-center">
-              <span className="p-2">
-                <FaRegUser size={18} />
-              </span>
-              Sign in
-            </li>
-          </Link>
+
           <Link to="/cart">
             <li className="flex items-center justify-center">
-              <span className="p=4">
+              <span className="p-2">
                 <ShoppingBag size={18} />
               </span>
               Cart

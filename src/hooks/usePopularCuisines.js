@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import getData from "../utils/getData";
-
+import { POPULAR_CUISINES } from "../utils/constants";
 function usePopularCuisines() {
   const [popularCuisines, setPopularCuisines] = useState(null);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await getData(
-          "https://www.swiggy.com/dapi/landing/PRE_SEARCH?lat=28.6139391&lng=77.2090212"
-        );
+        const data = await getData(POPULAR_CUISINES);
 
         setPopularCuisines(
           data?.data?.cards?.find(
             (item) => item?.card?.card?.imageGridCards?.info
           )?.card?.card?.imageGridCards?.info || []
         );
+        setTitle(data?.data?.cards[1]?.card?.card?.header?.title);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -24,7 +24,7 @@ function usePopularCuisines() {
     fetchData();
   }, []);
 
-  return { popularCuisines };
+  return { popularCuisines, title };
 }
 
 export default usePopularCuisines;
