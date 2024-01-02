@@ -34,6 +34,8 @@ const ResMenu = () => {
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
 
+  console.log(resInfo);
+
   return (
     <>
       <div className="mr-40 ml-40">
@@ -114,7 +116,7 @@ const ResMenu = () => {
                 </div>
               </div>
               {/* DISCOUNT */}
-              <div className="menu-container flex flex-row justify-center items-center -ml-96 mr-32 ">
+              <div className="menu-container flex flex-row justify-center items-center -ml-96 mr-36 ">
                 <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2 mr-2 ">
                   <div className="text-sm xs:text-xs font-bold text-zinc-600 whitespace-nowrap mb-1 flex items-center gap-2">
                     <span>

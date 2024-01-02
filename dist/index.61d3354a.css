@@ -479,6 +479,10 @@ img, video {
   margin-right: 8rem;
 }
 
+.mr-36 {
+  margin-right: 9rem;
+}
+
 .line-clamp-1 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
