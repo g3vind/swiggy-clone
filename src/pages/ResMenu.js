@@ -1,21 +1,12 @@
 import { useParams } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer";
-import { IMG_CDN_URL } from "../utils/constants";
-import { CiDiscount1 } from "react-icons/ci";
 import useResMenu from "../hooks/useResMenu";
-import { MdDeliveryDining } from "react-icons/md";
-import { useState } from "react";
 
+import { useState } from "react";
+import { Search, Clock8, IndianRupee } from "lucide-react";
 const ResMenu = () => {
   const { resId } = useParams();
   const resInfo = useResMenu(resId);
-
-  // for showing discount
-  const [showDiscount, setShowDiscount] = useState(false);
-
-  const toggleDiscountButton = () => {
-    setShowDiscount(!showDiscount);
-  };
 
   if (resInfo === null) {
     return <ResCardShimmer />;
@@ -32,154 +23,81 @@ const ResMenu = () => {
     cloudinaryImageId,
     costForTwoMessage,
     totalRatings,
+    aggregatedDiscountInfo,
     aggregatedDiscountInfoV2,
     feeDetails,
+
+    description,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card || {};
+  // const { itemCards } =
+  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+  //     ?.card || {};
 
-  console.log(resInfo);
+  // console.log(resInfo);
 
   return (
-    <>
-      <div className="menu-container flex flex-row">
-        <div className="left">
-          <img src={IMG_CDN_URL + cloudinaryImageId} />
-          <p className="text-center ml-60 rating">
-            <span className="font-bold text-center"> {avgRating}</span>⭐ |{" "}
-            {totalRatings}
-            +ratings
-          </p>
-          <h2
-            className={`text-center relative left-32 mt-8 font-bold text-2xl ${
-              headerBanner?.isOpen ? "text-red-500" : "text-green-500"
-            }`}
-          >
-            {headerBanner?.isOpen ? (
-              <p id="blink" className="font-bold">
-                Currently Closed 🔴
-              </p>
-            ) : (
-              <p id="blink" className="font-bold">
-                Currently Open 🟢
-              </p>
-            )}
-          </h2>
-          <button
-            id="discount-btn"
-            className={showDiscount ? "bg-blue-500" : "bg-green-500 "}
-            onClick={toggleDiscountButton}
-          >
-            {showDiscount ? "Hide Coupons❌" : "Show Discount Coupons"}
-          </button>
-
-          {showDiscount && (
-            <div className="flex flex-col relative left-44">
-              <div className="mt-6 discount-text relative left-24 bg-red-500 text-white p-4 rounded-md shadow-md">
-                <p className="flex items-center justify-center">
-                  <span className="mr-2 discount-text">
-                    <CiDiscount1 className="text-white" />
-                  </span>
-                  <span className="discount-text items-center">
-                    {aggregatedDiscountInfoV2?.descriptionList[0]?.meta}
-                  </span>
-                </p>
+    <div className=" flex w-full flex-col items-center justify-center gap-8 py-8 text-zinc-500">
+      <div className="flex sm:w-11/12 w-9/12 flex-col gap-8 ">
+        <div className="flex  items-center justify-between">
+          <div className="text-xs text-gray-400">
+            <span>Home</span> / <span>{city}</span> /{" "}
+            <span className="text-gray-600"> {name} </span>
+          </div>
+          <Search />
+        </div>
+        <div className="flex w-full flex-col items-center justify-between gap-6 px-3 ">
+          <div className="flex w-full items-start justify-between ">
+            <div className="text-xs">
+              <h2 className="mb-3 text-xl font-bold text-black xs:text-lg ">
+                {name}
+              </h2>
+              <p>{cuisines?.join(", ")} </p>
+              <p>{areaName}</p>
+              <p className="mt-4 text-sm xs:text-xs">{feeDetails?.message}</p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-2 rounded-md border p-2 text-xs">
+              <div className="flex items-center justify-start gap-1">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3334/3334338.png"
+                  className="w-4"
+                  alt=""
+                />
+                <span className="font-bold text-green-600 "> {avgRating}</span>
               </div>
-              <div className="mt-2 discount-text relative left-24 bg-red-500 text-white p-4 rounded-md shadow-md mb-4">
-                <p className="flex items-center justify-center">
-                  <span className="mr-2 discount-text">
-                    <CiDiscount1 className="text-white" />
+              <div className="h-[1px] w-full bg-slate-300"></div>
+              <span className="whitespace-nowrap font-mono">
+                <span className="font-mono">{totalRatings}+ ratings</span>
+              </span>
+            </div>
+          </div>
+          <div className="w-full border-t-[2px] border-dotted border-gray-300"></div>
+
+          <div className="flex w-full flex-col gap-4">
+            <div className="flex flex-row items-center justify-start gap-4 xs:gap-1 font-bold text-black">
+              <div className="flex flex-row items-center justify-start gap-2">
+                <img className="xs:w-3" src="" alt="" />
+                <span className="text-sm">
+                  <span className="flex items-center px-2">
+                    <span className="pr-2">
+                      <Clock8 size={17} />
+                    </span>
+                    {sla?.slaString}
                   </span>
-                  <span className="discount-text items-center">
-                    {aggregatedDiscountInfoV2?.descriptionList[1]?.meta}
-                  </span>
-                </p>
+                </span>
+              </div>
+              <div className="flex flex-row items-center justify-start gap-2">
+                <IndianRupee className="xs:w-3" size={17} />
+                <span className="text-sm xs:text-xs">
+                  <span className="flex items-center -px-2"></span>
+                  {costForTwoMessage}
+                </span>
               </div>
             </div>
-          )}
-        </div>
-        {/* ----------------RIGHT------------------------- */}
-        <div className="right">
-          <h1 className="text-3xl font-bold mt-5 mb-2 text-red-500">{name}</h1>
-
-          <div>
-            <h2 className="text-xl font-bold">{cuisines?.join(", ")}</h2>
           </div>
-
-          <div>
-            <h2>
-              <p className="font-medium">
-                <span className="font-semibold">Area: </span> {locality},
-                {areaName},
-              </p>
-              <p>
-                <span className="font-semibold">City:</span>
-                <span> {city}</span>
-              </p>
-            </h2>
-            <h2>
-              <span className="font-semibold">Distance: </span>
-              {sla.lastMileTravelString}
-            </h2>
-
-            <h3 className="inline-block">
-              <span className="font-bold">
-                {" "}
-                Delivery Charge{" "}
-                <MdDeliveryDining className="inline-block font-semibold" />:{" "}
-              </span>
-              <span className="text-xl font-bold text-green-500">
-                {feeDetails?.amount
-                  ? "₹" + Math.round(feeDetails.amount / 10 + 30)
-                  : "N/A"}
-              </span>
-            </h3>
-          </div>
-
-          <div className="discount">
-            {/* <p className="flex items-center">
-              <span className="mr-2 h-4 w-3">
-                <CiDiscount1 />
-              </span>
-              {aggregatedDiscountInfoV2?.descriptionList[0]?.meta}
-            </p> */}
-          </div>
-          <div className="discount">
-            <p>{costForTwoMessage}</p>
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Available Dishes</h3>
-          <ul className="dishes-list">
-            {itemCards && itemCards.length > 0 ? (
-              itemCards.map((item) => (
-                <li key={item?.card?.info?.id} className="dish-card">
-                  <div className="dish-image-container">
-                    <img
-                      src={IMG_CDN_URL + item?.card?.info?.imageId}
-                      alt={item?.card?.info?.name}
-                    />
-                  </div>
-                  <div className="dish-details">
-                    <p className="dish-name">{item?.card?.info?.name}</p>
-
-                    <p className="dish-price">
-                      ₹
-                      {item?.card?.info?.price / 100 ||
-                        item?.card?.info?.defaultPrice / 100}
-                    </p>
-                  </div>
-                </li>
-              ))
-            ) : (
-              <p className="text-2xl border-2 bg-slate-300 no-dishes">
-                No dishes at the moment. 😢
-              </p>
-            )}
-          </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default ResMenu;
