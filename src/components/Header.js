@@ -28,11 +28,14 @@ const Header = () => {
             </li>
           </Link>
           <Link to="/offers">
-            <li className="flex items-center justify-center">
+            <li className="flex items-center justify-center relative">
               <span className="p-2">
                 <BadgePercent size={18} />
               </span>
               Offers
+              <span className="absolute top-0 right-0 mt-1 mr-1 text-orange-500 text-xs -px-2 py-2 rounded-full">
+                NEW
+              </span>
             </li>
           </Link>
           <Link to="/help">
