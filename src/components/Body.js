@@ -74,7 +74,7 @@ const Body = () => {
               <Link
                 key={restaurant?.info?.id}
                 to={"/restaurants/" + restaurant?.info?.id}
-                className={`mr-4 ${index % 5 === 4 ? "mb-6" : ""}`} // Add margin bottom every 5th element
+                className={`mr-4 ${index % 5 === 4 ? "mb-6" : ""}`}
               >
                 <ResCard {...restaurant.info} />
               </Link>
