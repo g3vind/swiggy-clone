@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import LOGO from "../images/logo.svg";
 
 function Footer() {
@@ -6,13 +7,15 @@ function Footer() {
       {/* item1 */}
       <div className="flex flex-col gap-2 xs:gap-1 whitespace-nowrap sm:overflow-hidden">
         <h3 className="text-2xl xs:text-lg font-bold flex items-center gap-2 xs:gap-1 text-white">
-          <img
-            src={LOGO}
-            className="w-8 xs:w-6"
-            style={{ fill: "green" }}
-            alt=""
-          />{" "}
-          <span>Swiggy</span>
+          <Link to="/">
+            <img
+              src={LOGO}
+              className="w-8 xs:w-6"
+              style={{ fill: "green" }}
+              alt=""
+            />{" "}
+          </Link>
+          <span className="hover:text-orange-400">Swiggy</span>
         </h3>
         <span className=""> &copy; 2024 Bundl </span>
         <span> Technologies Pvt. Ltd</span>

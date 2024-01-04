@@ -13,7 +13,7 @@ import ResMenu from "./pages/ResMenu";
 import BannerShimmer from "./shimmers/BannerShimmer";
 import Help from "./pages/Help";
 import EmptyCart from "./components/EmptyCart";
-
+import Loader from "./shimmers/Loader";
 const AppLayout = () => {
   return (
     <>
@@ -36,7 +36,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/search",
         element: (
-          <Suspense fallback={<BannerShimmer />}>
+          <Suspense fallback={<Loader />}>
             <Search />
           </Suspense>
         ),
@@ -44,7 +44,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/offers",
         element: (
-          <Suspense fallback={<BannerShimmer />}>
+          <Suspense fallback={<Loader />}>
             <Offers />
           </Suspense>
         ),
@@ -52,7 +52,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/help",
         element: (
-          <Suspense fallback={<BannerShimmer />}>
+          <Suspense fallback={<Loader />}>
             <Help />
           </Suspense>
         ),
@@ -60,7 +60,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: (
-          <Suspense fallback={<BannerShimmer />}>
+          <Suspense fallback={<Loader />}>
             <EmptyCart />
           </Suspense>
         ),

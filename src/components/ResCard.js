@@ -1,6 +1,6 @@
 import { IMG_CDN_URL } from "../utils/constants";
 import vagIcon from "../images/vagIcon.svg";
-
+import { MdFiberNew } from "react-icons/md";
 const ResCard = ({
   cloudinaryImageId,
   name,
@@ -54,4 +54,19 @@ const ResCard = ({
   );
 };
 
+// HIGHER ORDER COMPONENT - takes and returns a component
+export const WithOpenLabel = (ResCard) => {
+  return (props) => {
+    return (
+      <div>
+        <MdFiberNew
+          className="absolute ml-52 -mt-5 mb-6"
+          size={25}
+          color="orange"
+        />
+        <ResCard {...props} />
+      </div>
+    );
+  };
+};
 export default ResCard;

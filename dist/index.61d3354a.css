@@ -288,6 +288,14 @@ img, video {
   top: 0;
 }
 
+.left-16 {
+  left: 4rem;
+}
+
+.left-80 {
+  left: 20rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -317,6 +325,10 @@ img, video {
 .my-3 {
   margin-top: .75rem;
   margin-bottom: .75rem;
+}
+
+.-ml-96 {
+  margin-left: -24rem;
 }
 
 .-mt-16 {
@@ -395,6 +407,10 @@ img, video {
   margin-right: 5rem;
 }
 
+.mr-36 {
+  margin-right: 9rem;
+}
+
 .mr-4 {
   margin-right: 1rem;
 }
@@ -435,52 +451,24 @@ img, video {
   margin-top: 2rem;
 }
 
-.mr-80 {
-  margin-right: 20rem;
+.ml-6 {
+  margin-left: 1.5rem;
 }
 
-.-ml-40 {
-  margin-left: -10rem;
+.-mt-8 {
+  margin-top: -2rem;
 }
 
-.-ml-80 {
-  margin-left: -20rem;
+.-mt-5 {
+  margin-top: -1.25rem;
 }
 
-.-ml-96 {
-  margin-left: -24rem;
+.ml-60 {
+  margin-left: 15rem;
 }
 
-.mr-96 {
-  margin-right: 24rem;
-}
-
-.-ml-72 {
-  margin-left: -18rem;
-}
-
-.-ml-20 {
-  margin-left: -5rem;
-}
-
-.-ml-60 {
-  margin-left: -15rem;
-}
-
-.mr-60 {
-  margin-right: 15rem;
-}
-
-.mr-48 {
-  margin-right: 12rem;
-}
-
-.mr-32 {
-  margin-right: 8rem;
-}
-
-.mr-36 {
-  margin-right: 9rem;
+.ml-52 {
+  margin-left: 13rem;
 }
 
 .line-clamp-1 {
@@ -496,6 +484,10 @@ img, video {
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -1353,6 +1345,11 @@ img, video {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-orange-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(251 146 60 / var(--tw-text-opacity));
 }
 
 .focus\:border-orange-400:focus {

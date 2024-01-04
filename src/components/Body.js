@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
-import ResCard from "./ResCard";
+import ResCard, { WithOpenLabel } from "./ResCard";
 import { Link } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
@@ -14,6 +14,10 @@ const Body = () => {
   const [bannerData, setBannerData] = useState([]);
   const [bannerTitle, setBannerTitle] = useState("");
   const [bodyTitle, setBodyTitle] = useState("");
+  console.log("list", listOfRestaurants);
+
+  // HIGHER ORDER COMPONENT
+  const ResCardOpen = WithOpenLabel(ResCard);
 
   useEffect(() => {
     fetchData();
@@ -76,7 +80,11 @@ const Body = () => {
                 to={"/restaurants/" + restaurant?.info?.id}
                 className={`mr-4 ${index % 5 === 4 ? "mb-6" : ""}`}
               >
-                <ResCard {...restaurant.info} />
+                {restaurant?.info?.isNewlyOnboarded ? (
+                  <ResCardOpen {...restaurant.info} />
+                ) : (
+                  <ResCard {...restaurant.info} />
+                )}
               </Link>
             ))
           ) : (

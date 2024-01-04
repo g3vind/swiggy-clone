@@ -605,6 +605,7 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
 var _logoSvg = require("../images/logo.svg");
 var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
 function Footer() {
@@ -617,30 +618,40 @@ function Footer() {
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                         className: "text-2xl xs:text-lg font-bold flex items-center gap-2 xs:gap-1 text-white",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                src: (0, _logoSvgDefault.default),
-                                className: "w-8 xs:w-6",
-                                style: {
-                                    fill: "green"
-                                },
-                                alt: ""
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _logoSvgDefault.default),
+                                        className: "w-8 xs:w-6",
+                                        style: {
+                                            fill: "green"
+                                        },
+                                        alt: ""
+                                    }, void 0, false, {
+                                        fileName: "src/components/Footer.js",
+                                        lineNumber: 11,
+                                        columnNumber: 13
+                                    }, this),
+                                    " "
+                                ]
+                            }, void 0, true, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 9,
+                                lineNumber: 10,
                                 columnNumber: 11
                             }, this),
-                            " ",
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "hover:text-orange-400",
                                 children: "Swiggy"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 15,
+                                lineNumber: 18,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 8,
+                        lineNumber: 9,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -648,20 +659,20 @@ function Footer() {
                         children: " \xa9 2024 Bundl "
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 17,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: " Technologies Pvt. Ltd"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 18,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Footer.js",
-                lineNumber: 7,
+                lineNumber: 8,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -672,55 +683,55 @@ function Footer() {
                         children: "Company"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 23,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "About"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 24,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Careers"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 25,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Team"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 26,
+                        lineNumber: 29,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Swiggy One"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 27,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Swiggy Instamart"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 28,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Swiggy Genie"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 29,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Footer.js",
-                lineNumber: 22,
+                lineNumber: 25,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -734,34 +745,34 @@ function Footer() {
                                 children: "Contact us"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 35,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Help & Support"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 38,
+                                lineNumber: 41,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Partner with us"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 39,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Ride with us"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 40,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 34,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -772,40 +783,40 @@ function Footer() {
                                 children: " Legal"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 43,
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Terms & Conditions"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 44,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Cookie Policy"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 45,
+                                lineNumber: 48,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                 children: "Privacy Policy"
                             }, void 0, false, {
                                 fileName: "src/components/Footer.js",
-                                lineNumber: 46,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 42,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Footer.js",
-                lineNumber: 33,
+                lineNumber: 36,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -816,61 +827,61 @@ function Footer() {
                         children: "We deliver to:"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 52,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Bangalore"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 55,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Gurgaon"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 56,
+                        lineNumber: 59,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Hyderabad"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 57,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Delhi"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Mumbai"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 59,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: "Pune"
                     }, void 0, false, {
                         fileName: "src/components/Footer.js",
-                        lineNumber: 60,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Footer.js",
-                lineNumber: 51,
+                lineNumber: 54,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/Footer.js",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 5
     }, this);
 }
@@ -884,7 +895,7 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../images/logo.svg":"6OHUE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6OHUE":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../images/logo.svg":"6OHUE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"6OHUE":[function(require,module,exports) {
 module.exports = require("e2764f6f0bf30c1").getBundleURL("2e5tg") + "logo.cd13699a.svg" + "?" + Date.now();
 
 },{"e2764f6f0bf30c1":"lgJ39"}]},["54mO8","1xC6H"], null, "parcelRequirece0d")
