@@ -895,7 +895,7 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../images/logo.svg":"6OHUE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-router-dom":"9xmpe"}],"6OHUE":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../images/logo.svg":"6OHUE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6OHUE":[function(require,module,exports) {
 module.exports = require("e2764f6f0bf30c1").getBundleURL("2e5tg") + "logo.cd13699a.svg" + "?" + Date.now();
 
 },{"e2764f6f0bf30c1":"lgJ39"}]},["54mO8","1xC6H"], null, "parcelRequirece0d")
