@@ -2,16 +2,17 @@ import React from "react";
 import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
 
-const Banner = ({ banners, bannerTitle }) => {
-  const limitedBanners = banners?.slice(0, 7);
+const Banner = ({ banners }) => {
+  const limitedBanners = banners?.slice(0, 3);
 
   return (
     <div className="flex flex-col m-20 mt-2 items-center ">
       <div className="flex mt-8">
-        <span id="text" className="relative font-extrabold">
-          {bannerTitle}
+        <span id="text" className="relative ml-4 mb-2 font-extrabold">
+          Best offers for you
         </span>
       </div>
+
       <div className="flex">
         {limitedBanners?.length > 0 ? (
           limitedBanners.map((banner) => (
@@ -19,15 +20,12 @@ const Banner = ({ banners, bannerTitle }) => {
               className="banner-card flex-row cursor-pointer"
               key={banner?.id}
             >
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col t-14 b-2 l-16 justify-center">
                 <img
-                  className="h-auto w-full"
+                  className="h-60 w-full rounded-2xl"
                   src={IMG_CDN_URL + banner.imageId}
                   alt={banner?.action?.text}
                 />
-                <span className="relative ml-1 font-bold items-center text-gray-500 text-center">
-                  {banner?.action?.text}
-                </span>
               </div>
             </div>
           ))

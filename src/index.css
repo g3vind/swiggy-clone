@@ -2,12 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   margin: 0;
   padding: 0;
-  font-family: " Proxima Nova, Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+  font-family: 'Roboto', sans-serif;
 }
+
+
 
 .header {
   height: 5.5rem;
@@ -119,9 +122,9 @@ box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .banner-shimmer{
   margin-top: -60px;
-  height: 320px;
+  height: 360px;
   width: 100vw;
-  margin: 20px;
+  
 }
 .res-text{
   height: 10px;
@@ -144,14 +147,9 @@ box-shadow: 1px 2px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .banner-card {
   /* border-radius: 50%; */
-  padding: 27px;
+  padding: 8px;
   position: relative;
-  overflow: hidden; /* Ensure content doesn't overflow the container */
-  transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: scale(1.05);
-  }
+  overflow: hidden;  
 }
 
 

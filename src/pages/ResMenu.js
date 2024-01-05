@@ -2,8 +2,6 @@ import { useParams } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer";
 import useResMenu from "../hooks/useResMenu";
 import { IMG_CDN_URL } from "../utils/constants";
-
-import { useState } from "react";
 import { Search, Clock8, IndianRupee } from "lucide-react";
 
 const ResMenu = () => {
@@ -34,8 +32,14 @@ const ResMenu = () => {
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
       ?.card || {};
 
-  console.log(resInfo);
-
+  // filtering categories of ItemCategory from data
+  const categories =
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    ) || [];
+  console.log("categories : ", categories);
   return (
     <>
       <div className="mr-40 ml-40">
@@ -137,7 +141,7 @@ const ResMenu = () => {
         </div>
 
         {/* ----------------Dishes Accordions------------------------- */}
-        <div className="flex flex-row flex-wrap justify-end mr-20 p-4 items-center m-4">
+        {/* <div className="flex flex-row flex-wrap justify-end mr-20 p-4 items-center m-4">
           <ul className="p-4">
             {itemCards && itemCards.length > 0 ? (
               itemCards.map((item) => (
@@ -150,7 +154,6 @@ const ResMenu = () => {
                     />
                   </div>
 
-                  {/* DISH PRICE */}
                   <div className="dish-details">
                     <p className="dish-name">{item?.card?.info?.name}</p>
                     <p className="dish-price">
@@ -167,7 +170,9 @@ const ResMenu = () => {
               </p>
             )}
           </ul>
-        </div>
+        </div> */}
+
+        {/* NEW CATEGORIES ACCORDION */}
       </div>
     </>
   );

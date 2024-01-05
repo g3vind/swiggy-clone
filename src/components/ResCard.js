@@ -10,22 +10,16 @@ const ResCard = ({
   areaName,
   aggregatedDiscountInfoV3,
 }) => {
-  const cardWidth = "w-60"; // Set the desired width
-
   return (
-    <div
-      className={`${cardWidth} mb-6  flex flex-col justify-center gap-3 transition-all hover:scale-95`}
-    >
-      <div
-        className={`${cardWidth} h-40 relative justify-center gap-3 overflow-hidden rounded-2xl bg-cover bg-center`}
-      >
+    <div className="h-64 w-56 mb-6 ml-4 flex flex-col gap-3 transition-all hover:scale-95">
+      <div className="flex flex-row relative justify-center gap-2 items-center overflow-hidden rounded-2xl bg-cover bg-center">
         <img
           src={`${IMG_CDN_URL + cloudinaryImageId}`}
           alt={name}
           className="w-full h-full object-cover"
         />
         <p
-          className={`absolute bottom-2 left-2 z-10 text-xs font-bold text-white`}
+          className={`absolute bottom-2 left-2 z-10 text-xl font-extrabold text-white`}
         >
           <span className="whitespace-nowrap block">
             {aggregatedDiscountInfoV3?.header}
@@ -34,7 +28,6 @@ const ResCard = ({
             {aggregatedDiscountInfoV3?.subHeader}
           </span>
         </p>
-        <div className="gradient-box absolute bottom-0 left-0 h-full w-full"></div>
       </div>
 
       <div className="text-slate-600">
