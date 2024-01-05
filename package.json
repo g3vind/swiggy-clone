@@ -4,7 +4,7 @@
   "description": "namaste react course",
   "scripts": {
     "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html --no-cache --no-source-maps",
+    "build": "npx parcel build src/index.html --no-optimize",
     "test": "jest"
   },
   "author": "Govind Kumar",
@@ -20,6 +20,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.15.2",
     "@mui/material": "^5.15.2",
+    "@parcel/optimizer-terser": "^2.11.0",
     "lucide-react": "^0.303.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
