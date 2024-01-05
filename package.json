@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "namaste react course",
   "scripts": {
-    "start": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "jest"
   },
   "author": "Govind Kumar",
