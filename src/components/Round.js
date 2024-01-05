@@ -1,7 +1,7 @@
 import React from "react";
 import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
-import BodyShimmer from "../shimmers/bodyShimmer.js";
+import BodyShimmer from "../shimmers/BodyShimmer.js";
 
 const Round = ({ banners, title }) => {
   const limitedBanners = banners?.slice(0, 6);
