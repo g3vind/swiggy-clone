@@ -1,7 +1,5 @@
 import React from "react";
-import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
-import BodyShimmer from "../shimmers/BodyShimmer.js";
 
 const Round = ({ banners, title }) => {
   const limitedBanners = banners?.slice(0, 6);
@@ -15,7 +13,7 @@ const Round = ({ banners, title }) => {
       </div>
 
       <div className="flex">
-        {limitedBanners?.length > 0 ? (
+        {limitedBanners?.length > 0 &&
           limitedBanners.map((banner) => (
             <div
               className="flex-row cursor-pointer space-x-2 ml-12 mr-12"
@@ -29,10 +27,7 @@ const Round = ({ banners, title }) => {
                 />
               </div>
             </div>
-          ))
-        ) : (
-          <BodyShimmer></BodyShimmer>
-        )}
+          ))}
       </div>
     </div>
   );
