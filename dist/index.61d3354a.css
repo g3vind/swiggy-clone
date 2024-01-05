@@ -421,10 +421,6 @@ img, video {
   margin-left: 3rem;
 }
 
-.ml-16 {
-  margin-left: 4rem;
-}
-
 .ml-24 {
   margin-left: 6rem;
 }
@@ -499,14 +495,6 @@ img, video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
-}
-
-.ml-1 {
-  margin-left: .25rem;
 }
 
 .line-clamp-1 {
@@ -630,10 +618,6 @@ img, video {
 
 .w-full {
   width: 100%;
-}
-
-.w-60 {
-  width: 15rem;
 }
 
 .cursor-pointer {
