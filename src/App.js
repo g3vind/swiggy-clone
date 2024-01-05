@@ -13,7 +13,7 @@ import ResMenu from "./pages/ResMenu";
 import BannerShimmer from "./shimmers/BannerShimmer";
 import Help from "./pages/Help";
 import EmptyCart from "./components/EmptyCart";
-import Loader from "./shimmers/Loader";
+import Loader from "./shimmers/LoaderShimmer";
 const AppLayout = () => {
   return (
     <>
