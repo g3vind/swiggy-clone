@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"1IgUu":[function(require,module,exports) {
+})({"54RwP":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -226,7 +226,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== "undefined") {
     var hostname = getHostname();
     var port = getPort();
-    var protocol = HMR_SECURE || location.protocol == "https:" && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? "wss" : "ws";
+    var protocol = HMR_SECURE || location.protocol == "https:" && ![
+        "localhost",
+        "127.0.0.1",
+        "0.0.0.0"
+    ].includes(hostname) ? "wss" : "ws";
     var ws;
     try {
         ws = new WebSocket(protocol + "://" + hostname + (port ? ":" + port : "") + "/");
@@ -715,6 +719,6 @@ exports.default = usePopularCuisines;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../utils/getData":"jrHwE","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1IgUu","1xC6H"], null, "parcelRequirece0d")
+},{"react":"21dqq","../utils/getData":"jrHwE","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["54RwP","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Search.c0df552c.js.map

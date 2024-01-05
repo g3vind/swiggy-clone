@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"8A5dE":[function(require,module,exports) {
+})({"iZNAP":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -226,7 +226,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== "undefined") {
     var hostname = getHostname();
     var port = getPort();
-    var protocol = HMR_SECURE || location.protocol == "https:" && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? "wss" : "ws";
+    var protocol = HMR_SECURE || location.protocol == "https:" && ![
+        "localhost",
+        "127.0.0.1",
+        "0.0.0.0"
+    ].includes(hostname) ? "wss" : "ws";
     var ws;
     try {
         ws = new WebSocket(protocol + "://" + hostname + (port ? ":" + port : "") + "/");
@@ -1104,6 +1108,6 @@ $RefreshReg$(_c, "RestaurantCard");
 },{"react/jsx-dev-runtime":"iTorj","../utils/constants":"hB8jg","../images/vagIcon.svg":"5pNSj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5pNSj":[function(require,module,exports) {
 module.exports = require("47d3516b0c23d6e4").getBundleURL("aehQI") + "vagIcon.61a32fcd.svg" + "?" + Date.now();
 
-},{"47d3516b0c23d6e4":"lgJ39"}]},["8A5dE","1xC6H"], null, "parcelRequirece0d")
+},{"47d3516b0c23d6e4":"lgJ39"}]},["iZNAP","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Offers.754c0dc5.js.map

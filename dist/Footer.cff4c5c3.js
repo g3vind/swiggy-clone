@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"54mO8":[function(require,module,exports) {
+})({"6MJgn":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -226,7 +226,11 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== "undefined") {
     var hostname = getHostname();
     var port = getPort();
-    var protocol = HMR_SECURE || location.protocol == "https:" && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? "wss" : "ws";
+    var protocol = HMR_SECURE || location.protocol == "https:" && ![
+        "localhost",
+        "127.0.0.1",
+        "0.0.0.0"
+    ].includes(hostname) ? "wss" : "ws";
     var ws;
     try {
         ws = new WebSocket(protocol + "://" + hostname + (port ? ":" + port : "") + "/");
@@ -898,6 +902,6 @@ $RefreshReg$(_c, "Footer");
 },{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../images/logo.svg":"6OHUE","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6OHUE":[function(require,module,exports) {
 module.exports = require("e2764f6f0bf30c1").getBundleURL("2e5tg") + "logo.cd13699a.svg" + "?" + Date.now();
 
-},{"e2764f6f0bf30c1":"lgJ39"}]},["54mO8","1xC6H"], null, "parcelRequirece0d")
+},{"e2764f6f0bf30c1":"lgJ39"}]},["6MJgn","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Footer.cff4c5c3.js.map
