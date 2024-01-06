@@ -1,50 +1,18 @@
 import React, { useEffect, useState } from "react";
 import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
-import ResCard, { WithOpenLabel } from "./ResCard";
-import { Link } from "react-router-dom";
-import ResCardShimmer from "../shimmers/ResCardShimmer.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
 import Round from "./Round.js";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import TopRest from "./TopRest.js";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [topRestChain, setTopRestChain] = useState([]);
+  const [topRest, setTopRest] = useState([]);
   const [round, setRound] = useState([]);
   const [roundTitle, setRoundTitle] = useState("");
   const [bannerData, setBannerData] = useState([]);
   const [bodyTitle, setBodyTitle] = useState("");
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  const scrollLeftHandler = () => {
-    const container = document.getElementById("restaurantContainer");
-    if (container) {
-      const newScrollLeft = scrollLeft - 200; // You can adjust the scroll amount
-      container.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-      setScrollLeft(newScrollLeft);
-    }
-  };
-
-  // Function to handle scrolling to the right
-  const scrollRightHandler = () => {
-    const container = document.getElementById("restaurantContainer");
-    if (container) {
-      const newScrollLeft = scrollLeft + 200; // You can adjust the scroll amount
-      container.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-      setScrollLeft(newScrollLeft);
-    }
-  };
-
-  // HIGHER ORDER COMPONENT
-  const ResCardOpen = WithOpenLabel(ResCard);
 
   useEffect(() => {
     fetchData();
@@ -56,13 +24,16 @@ const Body = () => {
     try {
       const data = await fetch(API_CDN);
       const json = await data.json();
+      console.log(json.data);
       setListOfRestaurants(
         json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
-      setTopRestChain(
-        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+      setTopRest(
+        json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
       );
+      console.log(topRest);
 
       setBannerData(
         json?.data?.cards[0]?.card?.card?.imageGridCards?.info.map(
@@ -98,32 +69,7 @@ const Body = () => {
     <div className="overflow-hidden p-8">
       <Banner banners={bannerData} />
       <Round banners={round} title={roundTitle} />
-
-      <span id="txt" className="font-extrabold relative -mt-44 ml-40 mb-12">
-        {bodyTitle}
-      </span>
-
-      <div className="ml-24">
-        <div className="flex flex-wrap p-7">
-          {listOfRestaurants?.length > 0 ? (
-            listOfRestaurants.map((restaurant, index) => (
-              <Link
-                key={restaurant?.info?.id}
-                to={"/restaurants/" + restaurant?.info?.id}
-                className={`mr-4 ${index % 5 === 4 ? "mb-6" : ""}`}
-              >
-                {restaurant?.info?.isNewlyOnboarded ? (
-                  <ResCardOpen {...restaurant.info} />
-                ) : (
-                  <ResCard {...restaurant.info} />
-                )}
-              </Link>
-            ))
-          ) : (
-            <ResCardShimmer />
-          )}
-        </div>
-      </div>
+      <TopRest listOfRestaurants={listOfRestaurants} bodyTitle={bodyTitle} />
     </div>
   );
 };

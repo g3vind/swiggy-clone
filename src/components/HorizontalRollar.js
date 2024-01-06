@@ -1,3 +1,3 @@
 export default function HorizontalRollar() {
-  return <div className="w-full border-t-[1px] border-gray-300"></div>;
+  return <div className="w-full border-t-[1px] border-gray-300 mt-14"></div>;
 }

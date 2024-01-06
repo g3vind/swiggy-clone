@@ -1,11 +1,12 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants.js";
+import HorizontalRollar from "./HorizontalRollar.js";
 
 const Round = ({ banners, title }) => {
   const limitedBanners = banners?.slice(0, 6);
 
   return (
-    <div className="flex flex-col m-24 p-10 -mt-10 items-center ">
+    <div className="flex flex-col m-24 p-10 -mt-6 items-center ">
       <span id="text" className="mb-6 mt-6 font-extrabold">
         {title}
       </span>
@@ -30,6 +31,7 @@ const Round = ({ banners, title }) => {
             </div>
           ))}
       </div>
+      <HorizontalRollar />
     </div>
   );
 };

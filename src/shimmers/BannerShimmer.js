@@ -5,7 +5,7 @@ function BannerShimmer() {
       className="flex flex-col -mt-16
      items-center justify-center"
     >
-      <div className="banner-shimmer relative banner-text text-center bg-gray-900 text-gray-200 py-12 items-center justify-center text-xl -mt-6">
+      <div className="banner-shimmer relative banner-text text-center bg-gray-900 text-gray-200 py-14 items-center justify-center text-xl -mt-4">
         <div className="flex flex-col justify-center">
           <SpinnerCircularFixed
             className="text-center items-center spinner mt-4"
@@ -15,7 +15,7 @@ function BannerShimmer() {
             color="white"
             secondaryColor="rgba(0, 0, 0, 0.44)"
           />
-          <span className="mt-8 text-2xl">
+          <span className="mt-8 text-2xl font-mono  ">
             Looking for great food near you!
           </span>
         </div>
