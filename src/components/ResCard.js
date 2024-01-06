@@ -11,7 +11,7 @@ const ResCard = ({
   aggregatedDiscountInfoV3,
 }) => {
   return (
-    <div className="h-64 w-56 mb-6 ml-4 flex flex-col gap-3 transition-all hover:scale-95">
+    <div className="h-64 w-56 mb-6 ml-1.5 flex flex-col gap-3 transition-all hover:scale-95">
       <div className="flex flex-row relative justify-center gap-2 items-center overflow-hidden rounded-2xl bg-cover bg-center">
         <img
           src={`${IMG_CDN_URL + cloudinaryImageId}`}

@@ -95,7 +95,7 @@ const Body = () => {
   }
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden p-8">
       <Banner banners={bannerData} />
       <Round banners={round} title={roundTitle} />
 

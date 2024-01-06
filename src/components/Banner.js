@@ -6,9 +6,9 @@ const Banner = ({ banners }) => {
   const limitedBanners = banners?.slice(0, 3);
 
   return (
-    <div className="flex flex-col m-20 mt-2 items-center ">
-      <div className="flex mt-8">
-        <span id="text" className="relative ml-4 mb-2 font-extrabold">
+    <div className="flex flex-col m-22 -mt-2 items-center ">
+      <div className="flex">
+        <span id="text" className="relative -ml-12 mb-2 font-extrabold">
           Best offers for you
         </span>
       </div>
