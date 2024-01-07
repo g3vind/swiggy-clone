@@ -16,7 +16,7 @@ function BannerShimmer() {
             secondaryColor="rgba(0, 0, 0, 0.44)"
           />
           <span className="mt-8 text-2xl font-mono  ">
-            Looking for great food near you!
+            Looking for great food near you...
           </span>
         </div>
       </div>

@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer";
 import useResMenu from "../hooks/useResMenu";
-import { IMG_CDN_URL } from "../utils/constants";
-import { Search, Clock8, IndianRupee } from "lucide-react";
+import { Clock8, IndianRupee } from "lucide-react";
+import HorizontalRollar from "../components/HorizontalRollar";
+import ResCategory from "../components/ResCategory";
+import ToggleSwitch from "../components/ToggleSwitch";
 
 const ResMenu = () => {
   const { resId } = useParams();
@@ -40,9 +42,10 @@ const ResMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     ) || [];
   console.log("categories : ", categories);
+
   return (
     <>
-      <div className="mr-40 ml-40">
+      <div className="p-80 -mt-80">
         <div className="flex flex-col items-center justify-center gap-8 py-8 text-zinc-500">
           <div className="flex sm:w-11/12 w-9/12 flex-col gap-8">
             <div className="flex items-center justify-between">
@@ -53,9 +56,8 @@ const ResMenu = () => {
                 </span>{" "}
                 / <span className="text-gray-600"> {name} </span>
               </div>
-              <Search />
             </div>
-            <div className="flex w-full flex-col items-center justify-between gap-6 px-3">
+            <div className="flex w-full flex-col items-center justify-between gap-6 px-3 ">
               <div className="flex w-full items-start justify-between">
                 <div className="text-xs">
                   <div className="flex flex-row">
@@ -77,7 +79,7 @@ const ResMenu = () => {
                     </small>
                   </span>
                 </div>
-                <div className="flex flex-col items-center justify-center gap-2 rounded-md border p-2 text-xs">
+                <div className="flex flex-col items-center justify-center gap-2 rounded-md  p-2 text-xs">
                   <div className="flex items-center justify-start gap-1">
                     <img
                       src="https://cdn-icons-png.flaticon.com/128/3334/3334338.png"
@@ -120,7 +122,7 @@ const ResMenu = () => {
                 </div>
               </div>
               {/* DISCOUNT */}
-              <div className="menu-container flex flex-row justify-center items-center -ml-96 mr-36 ">
+              {/* <div className="menu-container flex flex-row justify-center items-center -ml-96 mr-48 ">
                 <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2 mr-2 ">
                   <div className="text-sm xs:text-xs font-bold text-zinc-600 whitespace-nowrap mb-1 flex items-center gap-2">
                     <span>
@@ -128,51 +130,24 @@ const ResMenu = () => {
                     </span>
                   </div>
                 </div>
-                <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2">
+                {/* <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2">
                   <div className="text-sm xs:text-xs font-bold text-zinc-600 whitespace-nowrap mb-1 flex items-center gap-2">
                     <span>
                       {aggregatedDiscountInfoV2?.descriptionList[1]?.meta}
                     </span>
                   </div>
-                </div>
-              </div>
+                </div> 
+              </div> */}
             </div>
           </div>
         </div>
 
-        {/* ----------------Dishes Accordions------------------------- */}
-        {/* <div className="flex flex-row flex-wrap justify-end mr-20 p-4 items-center m-4">
-          <ul className="p-4">
-            {itemCards && itemCards.length > 0 ? (
-              itemCards.map((item) => (
-                <li key={item?.card?.info?.id} className="dish-card p-2">
-                  <div className="">
-                    <img
-                      className="h-20 w-30 border-none object-contain"
-                      src={IMG_CDN_URL + item?.card?.info?.imageId}
-                      alt={item?.card?.info?.name}
-                    />
-                  </div>
-
-                  <div className="dish-details">
-                    <p className="dish-name">{item?.card?.info?.name}</p>
-                    <p className="dish-price">
-                      ₹
-                      {item?.card?.info?.price / 100 ||
-                        item?.card?.info?.defaultPrice / 100}
-                    </p>
-                  </div>
-                </li>
-              ))
-            ) : (
-              <p className="text-2xl border-2 bg-slate-300 no-dishes">
-                No dishes at the moment. 😢
-              </p>
-            )}
-          </ul>
-        </div> */}
-
-        {/* NEW CATEGORIES ACCORDION */}
+        {/*------------------ NEW CATEGORIES ACCORDION---------------------- */}
+        <div className="">
+          {categories.map((category, index) => (
+            <ResCategory key={index} data={category?.card?.card} />
+          ))}
+        </div>
       </div>
     </>
   );
