@@ -4,10 +4,13 @@ import useResMenu from "../hooks/useResMenu";
 import { Clock8, IndianRupee } from "lucide-react";
 import HorizontalRollar from "../components/HorizontalRollar";
 import ResCategory from "../components/ResCategory";
+import { useState } from "react";
 
 const ResMenu = () => {
   const { resId } = useParams();
   const resInfo = useResMenu(resId);
+
+  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) {
     return <ResCardShimmer />;
@@ -126,7 +129,14 @@ const ResMenu = () => {
         {/*------------------ NEW CATEGORIES ACCORDION---------------------- */}
         <div className="">
           {categories.map((category, index) => (
-            <ResCategory key={index} data={category?.card?.card} />
+            // Controlled Component
+            <ResCategory
+              key={category?.card?.card?.title}
+              data={category?.card?.card}
+              // lifting the state up
+              showItems={index === showIndex ? true : false}
+              setShowIndex={() => setShowIndex(index)}
+            />
           ))}
         </div>
       </div>

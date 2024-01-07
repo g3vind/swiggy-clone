@@ -2,13 +2,10 @@
 import { ChevronUp, ChevronDown } from "lucide-react";
 import ThickRollar from "./ThickRollar";
 import CategoryItems from "./CategoryItems";
-import { useState } from "react";
-const ResCategory = ({ data }) => {
-  // state for showing items
-  const [showItems, setShowItems] = useState(true);
-  // function for handling the click of accordion header
+
+const ResCategory = ({ data, showItems, setShowIndex }) => {
   function handleClick() {
-    setShowItems(!showItems);
+    setShowIndex();
   }
   return (
     <div className="ml-7 mr-7">
