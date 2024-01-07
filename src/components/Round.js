@@ -1,6 +1,7 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants.js";
 import HorizontalRollar from "./HorizontalRollar.js";
+import RoundShimmer from "../shimmers/RoundShimmer.js";
 
 const Round = ({ banners, title }) => {
   const limitedBanners = banners?.slice(0, 5);
@@ -12,7 +13,7 @@ const Round = ({ banners, title }) => {
       </span>
 
       <div className="flex">
-        {limitedBanners?.length > 0 &&
+        {limitedBanners?.length > 0 ? (
           limitedBanners.map((banner) => (
             <div
               className="flex-row cursor-pointer ml-12 mr-12"
@@ -29,7 +30,10 @@ const Round = ({ banners, title }) => {
                 {banner?.action?.text}
               </p> */}
             </div>
-          ))}
+          ))
+        ) : (
+          <RoundShimmer />
+        )}
       </div>
       <HorizontalRollar />
     </div>

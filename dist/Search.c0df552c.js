@@ -717,7 +717,7 @@ $RefreshReg$(_c, "SearchComponent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg"}],"dRd7n":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dRd7n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a5d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
