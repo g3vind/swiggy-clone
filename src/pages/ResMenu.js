@@ -4,7 +4,6 @@ import useResMenu from "../hooks/useResMenu";
 import { Clock8, IndianRupee } from "lucide-react";
 import HorizontalRollar from "../components/HorizontalRollar";
 import ResCategory from "../components/ResCategory";
-import ToggleSwitch from "../components/ToggleSwitch";
 
 const ResMenu = () => {
   const { resId } = useParams();
@@ -30,9 +29,9 @@ const ResMenu = () => {
     description,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card || {};
+  // const { itemCards } =
+  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
+  //     ?.card || {};
 
   // filtering categories of ItemCategory from data
   const categories =
@@ -41,7 +40,6 @@ const ResMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     ) || [];
-  console.log("categories : ", categories);
 
   return (
     <>
@@ -121,23 +119,6 @@ const ResMenu = () => {
                   </div>
                 </div>
               </div>
-              {/* DISCOUNT */}
-              {/* <div className="menu-container flex flex-row justify-center items-center -ml-96 mr-48 ">
-                <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2 mr-2 ">
-                  <div className="text-sm xs:text-xs font-bold text-zinc-600 whitespace-nowrap mb-1 flex items-center gap-2">
-                    <span>
-                      {aggregatedDiscountInfoV2?.descriptionList[0]?.meta}
-                    </span>
-                  </div>
-                </div>
-                {/* <div className="inline-block rounded-md border p-2 text-xs gap-4 mb-2">
-                  <div className="text-sm xs:text-xs font-bold text-zinc-600 whitespace-nowrap mb-1 flex items-center gap-2">
-                    <span>
-                      {aggregatedDiscountInfoV2?.descriptionList[1]?.meta}
-                    </span>
-                  </div>
-                </div> 
-              </div> */}
             </div>
           </div>
         </div>

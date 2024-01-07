@@ -613,12 +613,17 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _lucideReact = require("lucide-react");
 var _usePopularCuisines = require("../hooks/usePopularCuisines");
 var _usePopularCuisinesDefault = parcelHelpers.interopDefault(_usePopularCuisines);
+var _constants = require("../utils/constants");
+var _s = $RefreshSig$();
 function SearchComponent() {
+    _s();
+    const { title, popularCuisines } = (0, _usePopularCuisinesDefault.default)();
+    const limitedPopularCuisines = popularCuisines?.slice(0, 12);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "flex justify-center mt-10 mb-20",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-center mt-10 mb-20",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "relative",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -630,43 +635,79 @@ function SearchComponent() {
                             placeholder: "Search for restaurants and food"
                         }, void 0, false, {
                             fileName: "src/pages/Search.js",
-                            lineNumber: 11,
+                            lineNumber: 14,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "absolute top-0 right-0 pr-4 h-full flex items-center",
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lucideReact.Search), {}, void 0, false, {
                                 fileName: "src/pages/Search.js",
-                                lineNumber: 18,
+                                lineNumber: 21,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/pages/Search.js",
-                            lineNumber: 17,
+                            lineNumber: 20,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Search.js",
-                    lineNumber: 10,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                    className: "text-4xl",
-                    children: (0, _usePopularCuisinesDefault.default)
-                }, void 0, false, {
-                    fileName: "src/pages/Search.js",
-                    lineNumber: 21,
+                    lineNumber: 13,
                     columnNumber: 9
                 }, this)
-            ]
-        }, void 0, true, {
-            fileName: "src/pages/Search.js",
-            lineNumber: 9,
-            columnNumber: 7
-        }, this)
-    }, void 0, false);
+            }, void 0, false, {
+                fileName: "src/pages/Search.js",
+                lineNumber: 11,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex flex-col m-32 -mt-12 mb-8 ml-24",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "font-extrabold text-xl ml-52",
+                        children: title
+                    }, void 0, false, {
+                        fileName: "src/pages/Search.js",
+                        lineNumber: 27,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "flex flex-row justify-center",
+                        children: limitedPopularCuisines?.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "mx-2 cursor-pointer",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    src: (0, _constants.IMG_CDN_URL) + item?.imageId,
+                                    className: "mt-4 h-24 w-auto object-cover"
+                                }, void 0, false, {
+                                    fileName: "src/pages/Search.js",
+                                    lineNumber: 31,
+                                    columnNumber: 15
+                                }, this)
+                            }, item?.id, false, {
+                                fileName: "src/pages/Search.js",
+                                lineNumber: 30,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "src/pages/Search.js",
+                        lineNumber: 28,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "src/pages/Search.js",
+                lineNumber: 26,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true);
 }
+_s(SearchComponent, "QRxv7lWyvhW2aMaLuUG3gbnoBWE=", false, function() {
+    return [
+        (0, _usePopularCuisinesDefault.default)
+    ];
+});
 _c = SearchComponent;
 var _c;
 $RefreshReg$(_c, "SearchComponent");
@@ -676,7 +717,7 @@ $RefreshReg$(_c, "SearchComponent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dRd7n":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../utils/constants":"hB8jg"}],"dRd7n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a5d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
