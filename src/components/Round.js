@@ -3,7 +3,7 @@ import { IMG_CDN_URL } from "../utils/constants.js";
 import HorizontalRollar from "./HorizontalRollar.js";
 
 const Round = ({ banners, title }) => {
-  const limitedBanners = banners?.slice(0, 6);
+  const limitedBanners = banners?.slice(0, 5);
 
   return (
     <div className="flex flex-col m-24 p-6 -mt-6 items-center ">
