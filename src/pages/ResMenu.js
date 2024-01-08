@@ -2,15 +2,11 @@ import { useParams } from "react-router-dom";
 import ResCardShimmer from "../shimmers/ResCardShimmer";
 import useResMenu from "../hooks/useResMenu";
 import { Clock8, IndianRupee } from "lucide-react";
-import HorizontalRollar from "../components/HorizontalRollar";
 import ResCategory from "../components/ResCategory";
-import { useState } from "react";
 
 const ResMenu = () => {
   const { resId } = useParams();
   const resInfo = useResMenu(resId);
-
-  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) {
     return <ResCardShimmer />;
@@ -32,11 +28,6 @@ const ResMenu = () => {
     description,
   } = resInfo?.cards[0]?.card?.card?.info || {};
 
-  // const { itemCards } =
-  //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-  //     ?.card || {};
-
-  // filtering categories of ItemCategory from data
   const categories =
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
@@ -133,9 +124,6 @@ const ResMenu = () => {
             <ResCategory
               key={category?.card?.card?.title}
               data={category?.card?.card}
-              // lifting the state up
-              showItems={index === showIndex ? true : false}
-              setShowIndex={() => setShowIndex(index)}
             />
           ))}
         </div>

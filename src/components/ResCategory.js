@@ -2,10 +2,12 @@
 import { ChevronUp, ChevronDown } from "lucide-react";
 import ThickRollar from "./ThickRollar";
 import CategoryItems from "./CategoryItems";
+import { useState } from "react";
 
-const ResCategory = ({ data, showItems, setShowIndex }) => {
+const ResCategory = ({ data }) => {
+  const [showItems, setShowItems] = useState(false);
   function handleClick() {
-    setShowIndex();
+    setShowItems(!showItems);
   }
   return (
     <div className="ml-7 mr-7">
