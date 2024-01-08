@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function EmptyCart() {
   return (
-    <div className="flex flex-col justify-center items-center mt-6 mb-72">
+    <div className="flex flex-col justify-center items-center mt-28 mb-72">
       <img src={EMPTYCART} className="w-72 h-full" />
       <h1 className="font-bold mt-5 text-gray-900 text-md">
         Your cart is empty
