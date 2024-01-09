@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+import UserContext from "../context/UserContext";
+import { useContext } from "react";
+
 export default function SignIn() {
+  const { loggedInUser, setUserName } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/");
+  };
   return (
     <section className="mb-80">
       <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
@@ -23,20 +33,24 @@ export default function SignIn() {
               <div>
                 <div className="mt-2">
                   <input
+                    value={loggedInUser}
+                    onChange={(e) => setUserName(e.target.value)}
                     className="flex h-14 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                     type="text"
                     placeholder="NAME"
-                  ></input>
+                  />
                 </div>
               </div>
 
               <div>
                 <button
+                  onClick={handleLogin}
                   type="button"
                   className="inline-flex w-full items-center justify-center rounded-md bg-orange-500 px-3.5 py-3 font-semibold leading-7 text-white hover:bg-orange/80"
                 >
                   LOGIN
                 </button>
+
                 <small className="text-gray-400 text-xs mt-3">
                   By clicking on Login, I accept the &nbsp;
                   <span className="text-black">

@@ -7,9 +7,9 @@ import UserContext from "../context/UserContext";
 
 const Header = () => {
   // state for login button text
-  const [signIn, setSignIn] = useState("Sig In");
+
   // data from context
-  const { loggedInUser } = useContext(UserContext);
+  const { loggedInUser, setUserName } = useContext(UserContext);
   return (
     <div className="header">
       {/* HEADER LOGO  */}
@@ -50,14 +50,11 @@ const Header = () => {
           </Link>
 
           <Link to="/sign-in">
-            <li
-              className="flex items-center justify-center"
-              onClick={() => setSignIn({ loggedInUser })}
-            >
+            <li className="flex items-center justify-center">
               <span className="p-2">
                 <FaRegUser size={18} />
               </span>
-              {loggedInUser ? loggedInUser : signIn}
+              {loggedInUser ? loggedInUser : "Sign In"}
             </li>
           </Link>
 

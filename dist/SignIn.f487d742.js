@@ -610,7 +610,18 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>SignIn);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _userContext = require("../context/UserContext");
+var _userContextDefault = parcelHelpers.interopDefault(_userContext);
+var _react = require("react");
+var _s = $RefreshSig$();
 function SignIn() {
+    _s();
+    const { loggedInUser, setUserName } = (0, _react.useContext)((0, _userContextDefault.default));
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    const handleLogin = ()=>{
+        navigate("/");
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
         className: "mb-80",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -623,7 +634,7 @@ function SignIn() {
                         children: "Login"
                     }, void 0, false, {
                         fileName: "src/pages/SignIn.js",
-                        lineNumber: 6,
+                        lineNumber: 16,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -635,13 +646,13 @@ function SignIn() {
                                 children: "Create an account"
                             }, void 0, false, {
                                 fileName: "src/pages/SignIn.js",
-                                lineNumber: 11,
+                                lineNumber: 21,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/pages/SignIn.js",
-                        lineNumber: 9,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -651,12 +662,12 @@ function SignIn() {
                             src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"
                         }, void 0, false, {
                             fileName: "src/pages/SignIn.js",
-                            lineNumber: 16,
+                            lineNumber: 26,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/pages/SignIn.js",
-                        lineNumber: 15,
+                        lineNumber: 25,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -668,33 +679,36 @@ function SignIn() {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                         className: "mt-2",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                            value: loggedInUser,
+                                            onChange: (e)=>setUserName(e.target.value),
                                             className: "flex h-14 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
                                             type: "text",
                                             placeholder: "NAME"
                                         }, void 0, false, {
                                             fileName: "src/pages/SignIn.js",
-                                            lineNumber: 25,
+                                            lineNumber: 35,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "src/pages/SignIn.js",
-                                        lineNumber: 24,
+                                        lineNumber: 34,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/pages/SignIn.js",
-                                    lineNumber: 23,
+                                    lineNumber: 33,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            onClick: handleLogin,
                                             type: "button",
                                             className: "inline-flex w-full items-center justify-center rounded-md bg-orange-500 px-3.5 py-3 font-semibold leading-7 text-white hover:bg-orange/80",
                                             children: "LOGIN"
                                         }, void 0, false, {
                                             fileName: "src/pages/SignIn.js",
-                                            lineNumber: 34,
+                                            lineNumber: 46,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("small", {
@@ -706,49 +720,54 @@ function SignIn() {
                                                     children: "Terms & Conditions & Privacy Policy"
                                                 }, void 0, false, {
                                                     fileName: "src/pages/SignIn.js",
-                                                    lineNumber: 42,
+                                                    lineNumber: 56,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/pages/SignIn.js",
-                                            lineNumber: 40,
+                                            lineNumber: 54,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/pages/SignIn.js",
-                                    lineNumber: 33,
+                                    lineNumber: 45,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/pages/SignIn.js",
-                            lineNumber: 22,
+                            lineNumber: 32,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/pages/SignIn.js",
-                        lineNumber: 21,
+                        lineNumber: 31,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/SignIn.js",
-                lineNumber: 5,
+                lineNumber: 15,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "src/pages/SignIn.js",
-            lineNumber: 4,
+            lineNumber: 14,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "src/pages/SignIn.js",
-        lineNumber: 3,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
+_s(SignIn, "ubIAWkVcvnwN6/P7DNyQxXHomdI=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
 _c = SignIn;
 var _c;
 $RefreshReg$(_c, "SignIn");
@@ -758,6 +777,6 @@ $RefreshReg$(_c, "SignIn");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["k0KZt","1xC6H"], null, "parcelRequirece0d")
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../context/UserContext":"3d9iM","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["k0KZt","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=SignIn.f487d742.js.map
