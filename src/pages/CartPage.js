@@ -16,15 +16,22 @@ export default function CartPage({ items }) {
       position: "bottom-right",
     });
   };
-  const handleRemoveItem = (item) => {
-    dispatch(removeItem(item));
-    toast.error(`${item.card.info.name} removed from the cart!`, {
-      position: "bottom-right",
-    });
+
+  const handleRemoveItem = (itemIdToRemove) => {
+    const itemToRemove = items.find(
+      (item) => item?.card?.info?.id === itemIdToRemove
+    );
+
+    if (itemToRemove) {
+      dispatch(removeItem(itemToRemove));
+      toast.error(`${itemToRemove.card.info.name} removed from the cart!`, {
+        position: "bottom-right",
+      });
+    }
   };
 
   const handleClearCart = () => {
-    dispatch(clearCart);
+    dispatch(clearCart());
     toast.info("Cart cleared!", { position: "bottom-right" });
   };
 
@@ -54,7 +61,7 @@ export default function CartPage({ items }) {
                     <div className="flex-shrink-0">
                       <img
                         src={IMG_CDN_URL + item?.card?.info?.imageId}
-                        className="sm:h-44 sm:w-40 -mt-12 h-28 w-20 rounded-md object-contain object-center"
+                        className="sm:h-22 sm:w-20  h-20 w-20 rounded-md object-cover object-center"
                       />
                     </div>
 
@@ -93,7 +100,9 @@ export default function CartPage({ items }) {
                       <div className="mb-2 flex">
                         <div className="min-w-24 flex">
                           <button
-                            onClick={() => handleRemoveItem(item)}
+                            onClick={() =>
+                              handleRemoveItem(item?.card?.info?.id)
+                            }
                             type="button"
                             className="h-7 w-7"
                           >

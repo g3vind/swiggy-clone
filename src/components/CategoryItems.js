@@ -53,10 +53,12 @@ const CategoryItems = ({ items }) => {
 
             <div className="flex flex-col justify-center items-center">
               <img
-                className="h-24 w-auto rounded-lg mt-6"
+                className="object-cover"
+                style={{ height: "70px", width: "60px" }}
                 src={IMG_CDN_URL + item?.card?.info?.imageId}
                 alt={item?.card?.info?.name}
               />
+
               <button
                 onClick={() => handleAddItem(item)}
                 className="relative -top-5 bg-gray-50 py-2 rounded-lg px-8 shadow-xl text-green-500 font-bold text-sm hover:shadow-2xl"
