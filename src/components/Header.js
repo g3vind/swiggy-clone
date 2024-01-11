@@ -13,9 +13,14 @@ const Header = () => {
   return (
     <div className="header">
       {/* HEADER LOGO  */}
-      <div className="logo-container">
+      <div className="logo-container flex flex-row justify-center items-center">
         <Link to="/">
           <img src={LOGO} alt="LOGO"></img>
+        </Link>
+        <Link to="/">
+          <h2 className="text-orange-500 cursor-pointer -ml-6 font-sans font-extrabold text-xl">
+            SWIGGY
+          </h2>
         </Link>
       </div>
       {/* NAV ITEMS */}

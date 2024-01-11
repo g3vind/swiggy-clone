@@ -598,6 +598,14 @@ img, video {
   margin-bottom: 3.5rem;
 }
 
+.-ml-6 {
+  margin-left: -1.5rem;
+}
+
+.-ml-8 {
+  margin-left: -2rem;
+}
+
 .line-clamp-1 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
