@@ -1,6 +1,29 @@
+import { useDispatch } from "react-redux";
 import { IMG_CDN_URL } from "../utils/constants";
+import { addItem } from "../store/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CategoryItems = ({ items }) => {
+  console.log(items);
+  const dispatch = useDispatch();
+
+  // function to handle sending dispatch action and show toast notification
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item));
+
+    // Show a success toast notification
+    toast.success(`${item.card.info.name} added to the cart!`, {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
   return (
     <div>
       {items.map((item) => (
@@ -34,13 +57,28 @@ const CategoryItems = ({ items }) => {
                 src={IMG_CDN_URL + item?.card?.info?.imageId}
                 alt={item?.card?.info?.name}
               />
-              <button className="relative -top-5 bg-gray-50 py-2 rounded-lg px-8 shadow-xl text-green-500 font-bold text-sm hover:shadow-2xl">
-                ADD
+              <button
+                onClick={() => handleAddItem(item)}
+                className="relative -top-5 bg-gray-50 py-2 rounded-lg px-8 shadow-xl text-green-500 font-bold text-sm hover:shadow-2xl"
+              >
+                ADD +
               </button>
             </div>
           </div>
         </div>
       ))}
+      {/* ToastContainer at the bottom to act as a container for all toast notifications */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

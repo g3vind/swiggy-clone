@@ -1,15 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import LOGO from "../images/logo.svg";
 import { Link } from "react-router-dom";
 import { Search, BadgePercent, LifeBuoy, ShoppingBag } from "lucide-react";
 import { FaRegUser } from "react-icons/fa6";
 import UserContext from "../context/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  // state for login button text
-
   // data from context
-  const { loggedInUser, setUserName } = useContext(UserContext);
+  const { loggedInUser } = useContext(UserContext);
+
+  // selector hook to subscribe to cartSlice / store
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
   return (
     <div className="header">
       {/* HEADER LOGO  */}
@@ -68,7 +72,7 @@ const Header = () => {
               <span className="p-2">
                 <ShoppingBag size={18} />
               </span>
-              Cart
+              Cart ({cartItems.length})
             </li>
           </Link>
         </ul>

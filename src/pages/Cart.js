@@ -1,14 +1,17 @@
 import React from "react";
-import CartImage from "../images/Cart.png";
+import { useSelector } from "react-redux";
+import CategoryItems from "../components/CategoryItems";
+import EmptyCart from "../components/EmptyCart";
+import CartPage from "./CartPage";
 
 export default function Cart() {
+  // subscribing to store or cartSlice
+  const cartItems = useSelector((store) => store.cart.items);
   return (
-    <section>
-      <div className="grid place-content-center">
-        <div className="">
-          <img src={CartImage} className="p-14" />
-        </div>
+    <>
+      <div className="flex flex-row justify-around items-center m-auto">
+        {cartItems.length > 0 ? <CartPage items={cartItems} /> : <EmptyCart />}
       </div>
-    </section>
+    </>
   );
 }

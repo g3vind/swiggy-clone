@@ -13,8 +13,12 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Error } from "./pages/Error";
 import ResMenu from "./pages/ResMenu";
 import Help from "./pages/Help";
-import EmptyCart from "./components/EmptyCart";
+import Cart from "./pages/Cart";
 import Loader from "./shimmers/LoaderShimmer";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import CartPage from "./pages/CartPage";
+import ThankYou from "./pages/ThankYou";
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -28,11 +32,13 @@ const AppLayout = () => {
     setUserName(data.name);
   }, []);
   return (
-    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <Provider store={store}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -81,9 +87,13 @@ const appRouter = createBrowserRouter([
         path: "/cart",
         element: (
           <Suspense fallback={<Loader />}>
-            <EmptyCart />
+            <Cart />
           </Suspense>
         ),
+      },
+      {
+        path: "/thankyou",
+        element: <ThankYou />,
       },
       {
         path: "/restaurants/:resId",

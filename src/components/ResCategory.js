@@ -5,7 +5,7 @@ import CategoryItems from "./CategoryItems";
 import { useState } from "react";
 
 const ResCategory = ({ data }) => {
-  const [showItems, setShowItems] = useState(false);
+  const [showItems, setShowItems] = useState(true);
   function handleClick() {
     setShowItems(!showItems);
   }
@@ -23,8 +23,7 @@ const ResCategory = ({ data }) => {
           </span>
           <span>{showItems ? <ChevronUp /> : <ChevronDown />}</span>
         </div>
-        {/* Accordion Body */}
-        {/* showing and hiding this category items when the header is clicked */}
+
         {showItems && <CategoryItems items={data?.itemCards} />}
       </div>
 
