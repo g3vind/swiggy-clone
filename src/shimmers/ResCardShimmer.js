@@ -8,6 +8,15 @@ const ResCardShimmer = () => {
         <div className="shimmer-card"></div>
         <div className="shimmer-card"></div>
         <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
+        <div className="shimmer-card"></div>
       </div>
     </>
   );

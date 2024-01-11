@@ -3,7 +3,6 @@ import useOnlineStatus from "../hooks/useOnlineStatus.js";
 import { API_CDN } from "../utils/constants.js";
 import Banner from "./Banner.js";
 import Offline from "../pages/Offline.js";
-import Round from "./OnlineRest.js";
 import TopRest from "./TopRest.js";
 import OnlineRest from "./OnlineRest.js";
 
@@ -25,7 +24,7 @@ const Body = () => {
     try {
       const data = await fetch(API_CDN);
       const json = await data.json();
-      console.log(json.data);
+
       // FIRST ROW
       setBannerData(
         json?.data?.cards[0]?.card?.card?.imageGridCards?.info.map(
@@ -46,13 +45,14 @@ const Body = () => {
         json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
-      console.log(topRest);
       // THIRD ROW
+
       setOnlineRest(
         json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
       setOnlineTitle(json?.data?.cards[2]?.card?.card?.title);
+      console.log("online rest", onlineRest);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -69,7 +69,7 @@ const Body = () => {
       {/* Top restaurant chains in Vellore */}
       <TopRest listOfRestaurants={listOfRestaurants} bodyTitle={bodyTitle} />
       {/* Restaurants with online food delivery in Vellore */}
-      <OnlineRest onlineRest={onlineRest} title={onlineTitle} />
+      {/* <OnlineRest {...onlineRest?.info} title={onlineTitle} /> */}
     </div>
   );
 };

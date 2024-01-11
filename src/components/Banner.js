@@ -1,7 +1,6 @@
 import React from "react";
 import BannerShimmer from "../shimmers/BannerShimmer.js";
 import { IMG_CDN_URL } from "../utils/constants.js";
-import HR from "./HR.js";
 
 const Banner = ({ banners }) => {
   const limitedBanners = banners?.slice(0, 8);
@@ -14,7 +13,7 @@ const Banner = ({ banners }) => {
         </span>
       </div>
 
-      <div className="flex">
+      <div className="flex border-b-2 border-gray-300 mb-12 mt-3">
         {limitedBanners?.length > 0 ? (
           limitedBanners.map((banner) => (
             <div
