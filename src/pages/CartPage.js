@@ -18,8 +18,8 @@ export default function CartPage({ items }) {
     dispatch(decreaseItem(itemId));
   };
 
-  const handleIncreaseItem = (item) => {
-    dispatch(increaseItem(item));
+  const handleIncreaseItem = (itemId) => {
+    dispatch(increaseItem(itemId));
   };
 
   const handleRemoveItem = (itemIdToRemove) => {
@@ -40,6 +40,20 @@ export default function CartPage({ items }) {
     toast.info("Cart cleared!", { position: "bottom-right" });
   };
 
+  const calculateTotalPrice = () => {
+    return items.reduce(
+      (total, item) => total + (getItemPrice(item) + 30), // Adding delivery charge of ₹30 per item
+      0
+    );
+  };
+
+  const getItemPrice = (item) => {
+    const price = item?.card?.info?.price
+      ? item?.card?.info?.price / 100
+      : item?.card?.info?.defaultPrice / 100;
+    return price * item.quantity;
+  };
+
   return (
     <div className="mx-auto max-w-7xl px-2 lg:px-0 mb-60">
       <div className="mx-auto max-w-2xl py-8 lg:max-w-7xl">
@@ -50,7 +64,7 @@ export default function CartPage({ items }) {
         <form className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
           <section
             aria-labelledby="cart-heading"
-            className="rounded-lg bg-white lg:col-span-8"
+            className="rounded-lg bg-white lg:col-span-7"
           >
             <button
               onClick={() => handleClearCart()}
@@ -66,7 +80,7 @@ export default function CartPage({ items }) {
                     <div className="flex-shrink-0">
                       <img
                         src={IMG_CDN_URL + item?.card?.info?.imageId}
-                        className="sm:h-22 sm:w-20  h-20 w-20 rounded-md object-cover object-center"
+                        className="sm:h-22 sm:w-20 h-20 w-20 rounded-md object-cover object-center"
                       />
                     </div>
 
@@ -166,53 +180,70 @@ export default function CartPage({ items }) {
           </section>
           {/* Order summary */}
           <section
+            style={{ width: "400px", padding: "16px" }}
             aria-labelledby="summary-heading"
-            className="mt-12 rounded-sm lg:col-span-3 lg:mt-0 lg:p-0 bg-gray-200"
+            className="mt-12 rounded-lg lg:col-span-5 lg:mt-0 lg:p-0 bg-gray-200"
           >
             <h2
               id="summary-heading"
-              className=" border-b border-gray-200 px-4 py-3 text-lg font-medium text-gray-900 sm:p-4"
+              className="border-b text-xl border-gray-200 py-3 text-center font-semibold text-gray-900 sm:p-6"
             >
-              Price Details
+              Order Summary
+            </h2>
+            <h2 className="text-md text-center text-gray-800">
+              Items ({items?.length})
             </h2>
             <div>
-              <dl className=" space-y-1 px-2 py-4">
+              <dl className="space-y-1 px-1 py-4">
                 <div className="flex items-center justify-between">
-                  <dt className="text-sm text-gray-800">Price (3 item)</dt>
-                  <dd className="text-sm font-medium text-gray-900">
-                    ₹ 52,398
-                  </dd>
+                  <div className="flex flex-col justify-center items-center">
+                    {items.map((item) => (
+                      <div
+                        key={item?.card?.info?.id}
+                        className="flex items-center justify-between pt-2"
+                      >
+                        <div>
+                          <p className="text-sm flex font-semibold text-orange-500">
+                            {item?.card?.info?.name}&nbsp;
+                            <span className="text-black">
+                              &nbsp; ({item?.quantity})
+                            </span>
+                          </p>
+                        </div>
+                        <p className="text-sm float-end ml-28 font-medium -mt-1 text-gray-900">
+                          ₹ {getItemPrice(item)}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center justify-between pt-4">
-                  <dt className="flex items-center text-sm text-gray-800">
-                    <span>Discount</span>
-                  </dt>
-                  <dd className="text-sm font-medium text-green-700">
-                    - ₹ 3,431
-                  </dd>
-                </div>
+
                 <div className="flex items-center justify-between py-4">
                   <dt className="flex text-sm text-gray-800">
                     <span>Delivery Charges</span>
                   </dt>
-                  <dd className="text-sm font-medium text-green-700">Free</dd>
+                  <dd className="text-sm font-medium mr-8 text-green-700">
+                    ₹ 30
+                  </dd>
                 </div>
+
                 <div className="flex items-center justify-between border-y border-dashed py-4 ">
-                  <dt className="text-base font-medium text-gray-900">
+                  <dt className="text-lg font-medium text-gray-900">
                     Total Amount
                   </dt>
-                  <dd className="text-base font-medium text-gray-900">
-                    ₹ 48,967
+                  <dd className="text-lg font-medium mr-7 text-gray-900">
+                    ₹ {calculateTotalPrice()}
                   </dd>
                 </div>
               </dl>
-              <div className="px-2 pb-4 font-medium text-green-700">
+              {/* <div className="px-2 pb-4 font-medium text-green-700">
                 You will save ₹ 3,431 on this order
-              </div>
+              </div> */}
               <Link to="/thankyou">
                 <button
+                  onClick={() => handleClearCart()}
                   type="button"
-                  className="px-16 ml-3 py-3 rounded-lg mt-6 bg-green-500"
+                  className="px-16 ml-16 py-3 rounded-lg mt-6 bg-green-500"
                 >
                   PLACE ORDER
                 </button>
