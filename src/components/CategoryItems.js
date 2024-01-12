@@ -5,22 +5,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CategoryItems = ({ items }) => {
-  console.log(items);
   const dispatch = useDispatch();
 
-  // function to handle sending dispatch action and show toast notification
   const handleAddItem = (item) => {
-    // Dispatch an action
     dispatch(addItem(item));
-
-    // Show a success toast notification
     toast.success(`${item.card.info.name} added to the cart!`, {
       position: "bottom-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
     });
   };
 
@@ -69,7 +59,6 @@ const CategoryItems = ({ items }) => {
           </div>
         </div>
       ))}
-      {/* ToastContainer at the bottom to act as a container for all toast notifications */}
       <ToastContainer
         position="bottom-right"
         autoClose={3000}

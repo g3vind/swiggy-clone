@@ -1,8 +1,12 @@
-import { Trash } from "lucide-react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { IMG_CDN_URL } from "../utils/constants";
-import { addItem, clearCart, removeItem } from "../store/cartSlice";
+import {
+  clearCart,
+  removeItem,
+  increaseItem,
+  decreaseItem,
+} from "../store/cartSlice";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -10,11 +14,12 @@ import "react-toastify/dist/ReactToastify.css";
 export default function CartPage({ items }) {
   const dispatch = useDispatch();
 
-  const handleAddItem = (item) => {
-    dispatch(addItem(item));
-    toast.success(`${item.card.info.name} added to the cart!`, {
-      position: "bottom-right",
-    });
+  const handleDecreaseItem = (itemId) => {
+    dispatch(decreaseItem(itemId));
+  };
+
+  const handleIncreaseItem = (item) => {
+    dispatch(increaseItem(item));
   };
 
   const handleRemoveItem = (itemIdToRemove) => {
@@ -101,7 +106,7 @@ export default function CartPage({ items }) {
                         <div className="min-w-24 flex">
                           <button
                             onClick={() =>
-                              handleRemoveItem(item?.card?.info?.id)
+                              handleDecreaseItem(item?.card?.info?.id)
                             }
                             type="button"
                             className="h-7 w-7"
@@ -111,14 +116,45 @@ export default function CartPage({ items }) {
                           <input
                             type="text"
                             className="mx-1 h-7 w-9 rounded-md border text-center"
-                            defaultValue={1}
+                            value={item.quantity}
                           />
                           <button
-                            onClick={() => handleAddItem(item)}
+                            onClick={() =>
+                              handleIncreaseItem(item?.card?.info?.id)
+                            }
                             type="button"
                             className="flex h-7 w-7 items-center justify-center"
                           >
                             +
+                          </button>
+                        </div>
+                        <div class="ml-6 flex text-sm">
+                          <button
+                            onClick={() =>
+                              handleRemoveItem(item?.card?.info?.id)
+                            }
+                            type="button"
+                            class="flex items-center space-x-1 px-2 py-1 pl-0"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="12"
+                              height="12"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="text-red-500"
+                            >
+                              <path d="M3 6h18"></path>
+                              <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                            </svg>
+                            <span class="text-xs font-medium text-red-500">
+                              Remove
+                            </span>
                           </button>
                         </div>
                       </div>

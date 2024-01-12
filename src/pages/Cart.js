@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import CategoryItems from "../components/CategoryItems";
 import EmptyCart from "../components/EmptyCart";
 import CartPage from "./CartPage";
 
