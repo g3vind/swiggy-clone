@@ -613,12 +613,20 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _lucideReact = require("lucide-react");
 var _usePopularCuisines = require("../hooks/usePopularCuisines");
 var _usePopularCuisinesDefault = parcelHelpers.interopDefault(_usePopularCuisines);
+var _useRestaurantSearch = require("../hooks/useRestaurantSearch");
+var _useRestaurantSearchDefault = parcelHelpers.interopDefault(_useRestaurantSearch);
 var _constants = require("../utils/constants");
 var _s = $RefreshSig$();
 function SearchComponent() {
     _s();
     const { title, popularCuisines } = (0, _usePopularCuisinesDefault.default)();
     const limitedPopularCuisines = popularCuisines?.slice(0, 12);
+    const { searchQuery, setSearchQuery, searchResults, loading, error } = (0, _useRestaurantSearchDefault.default)();
+    const handleSearch = ()=>{
+        // Handle search as needed, maybe display search results
+        console.log("Search Query:", searchQuery);
+        console.log("Search Results:", searchResults);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -632,33 +640,36 @@ function SearchComponent() {
                             },
                             className: "h-12 rounded-md border border-black/30 bg-transparent px-4 py-2 text-sm placeholder:text-gray-500 placeholder:font-bold focus:outline-none focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50",
                             type: "text",
-                            placeholder: "Search for restaurants and food"
+                            placeholder: "Search for restaurants and food",
+                            value: searchQuery,
+                            onChange: (e)=>setSearchQuery(e.target.value)
                         }, void 0, false, {
                             fileName: "src/pages/Search.js",
-                            lineNumber: 14,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "absolute top-0 right-0 pr-4 h-full flex items-center",
+                            className: "absolute top-0 right-0 pr-4 h-full flex items-center cursor-pointer",
+                            onClick: handleSearch,
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _lucideReact.Search), {}, void 0, false, {
                                 fileName: "src/pages/Search.js",
-                                lineNumber: 21,
+                                lineNumber: 36,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "src/pages/Search.js",
-                            lineNumber: 20,
+                            lineNumber: 32,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/pages/Search.js",
-                    lineNumber: 13,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/pages/Search.js",
-                lineNumber: 11,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -669,7 +680,7 @@ function SearchComponent() {
                         children: title
                     }, void 0, false, {
                         fileName: "src/pages/Search.js",
-                        lineNumber: 27,
+                        lineNumber: 42,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -681,31 +692,32 @@ function SearchComponent() {
                                     className: "mt-4 h-24 w-auto object-cover"
                                 }, void 0, false, {
                                     fileName: "src/pages/Search.js",
-                                    lineNumber: 31,
+                                    lineNumber: 46,
                                     columnNumber: 15
                                 }, this)
                             }, item?.id, false, {
                                 fileName: "src/pages/Search.js",
-                                lineNumber: 30,
+                                lineNumber: 45,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "src/pages/Search.js",
-                        lineNumber: 28,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/pages/Search.js",
-                lineNumber: 26,
+                lineNumber: 41,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true);
 }
-_s(SearchComponent, "QRxv7lWyvhW2aMaLuUG3gbnoBWE=", false, function() {
+_s(SearchComponent, "UquqS6aaIoAMuJZK+pZ3/U8ordQ=", false, function() {
     return [
-        (0, _usePopularCuisinesDefault.default)
+        (0, _usePopularCuisinesDefault.default),
+        (0, _useRestaurantSearchDefault.default)
     ];
 });
 _c = SearchComponent;
@@ -717,7 +729,7 @@ $RefreshReg$(_c, "SearchComponent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dRd7n":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","lucide-react":"8oTgY","../hooks/usePopularCuisines":"dRd7n","../hooks/useRestaurantSearch":"jbXnZ","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dRd7n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$a5d3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -760,6 +772,65 @@ exports.default = usePopularCuisines;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../utils/getData":"jrHwE","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["54RwP","1xC6H"], null, "parcelRequirece0d")
+},{"react":"21dqq","../utils/getData":"jrHwE","../utils/constants":"hB8jg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jbXnZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0aa5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0aa5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _s = $RefreshSig$();
+const useRestaurantSearch = ()=>{
+    _s();
+    const [searchQuery, setSearchQuery] = (0, _react.useState)("");
+    const [searchResults, setSearchResults] = (0, _react.useState)([]);
+    const [loading, setLoading] = (0, _react.useState)(false);
+    const [error, setError] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        const searchRestaurants = async ()=>{
+            try {
+                if (searchQuery.trim() === "") {
+                    setSearchResults([]);
+                    return;
+                }
+                setLoading(true);
+                const latitude = 12.962163;
+                const longitude = 79.1506201;
+                const response = await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=${latitude}&lng=${longitude}&str=${searchQuery}&trackingId=undefined&submitAction=STORED_SEARCH&queryUniqueId=7f803913-f492-5687-42fe-7eb0fdb47254&selectedPLTab=RESTAURANT`);
+                const searchData = await response.json();
+                setSearchResults(searchData);
+                setError(null);
+            } catch (error) {
+                console.error("Error fetching search results:", error);
+                setSearchResults([]);
+                setError("Error fetching search results");
+            } finally{
+                setLoading(false);
+            }
+        };
+        searchRestaurants();
+    }, [
+        searchQuery
+    ]);
+    return {
+        searchQuery,
+        setSearchQuery,
+        searchResults,
+        loading,
+        error
+    };
+};
+_s(useRestaurantSearch, "w6INKhoSqU9A6Z+apljsAfVikNI=");
+exports.default = useRestaurantSearch;
+
+  $parcel$ReactRefreshHelpers$0aa5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["54RwP","1xC6H"], null, "parcelRequirece0d")
 
 //# sourceMappingURL=Search.c0df552c.js.map

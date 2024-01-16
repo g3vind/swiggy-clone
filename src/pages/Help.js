@@ -36,7 +36,7 @@ export default function Help() {
         <div className="mt-8 bg-white p-10">
           <h3 className="text-2xl font-bold sm:text-lg">FAQs</h3>
 
-          <div className="flex flex-col gap-6 py-5 xs:gap-4">
+          <div className="flex flex-col gap-6 py-3 xs:gap-4">
             {faqs?.map((item, index) => (
               <FAQCard
                 item={item}
