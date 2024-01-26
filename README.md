@@ -1,4 +1,4 @@
-# Swiggy WebApp Clone
+# Swiggy Clone
 
 Welcome to the Swiggy WebApp Clone repository! This project is a React.js-based web application that replicates the features of the popular food delivery platform Swiggy. The clone integrates Swiggy's Live API to provide real-time information about restaurants and dishes, enabling users to explore, select, and order their preferred meals.
 
