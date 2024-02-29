@@ -12,7 +12,7 @@ const Header = () => {
 
   // selector hook to subscribe to cartSlice / store
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="header">

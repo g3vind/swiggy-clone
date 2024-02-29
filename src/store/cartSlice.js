@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// ... (previous imports and code)
-
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -21,7 +19,7 @@ const cartSlice = createSlice({
       }
     },
     removeItem: (state, action) => {
-      const itemIdToRemove = action.payload?.card?.info?.id; // Assuming this is the unique identifier
+      const itemIdToRemove = action.payload?.card?.info?.id;
 
       if (itemIdToRemove) {
         state.items = state.items.filter(
